@@ -1,0 +1,71 @@
+{
+  "name": "lecture-studio-site",
+  "version": "1.0.0",
+  "description": "Website for lectureStudio",
+  "main": "index.js",
+  "type": "module",
+  "repository": "https://github.com/lectureStudio/.github.io",
+  "author": "Alex Andres",
+  "license": "(MIT AND CC-BY-NC-ND-4.0)",
+  "scripts": {
+    "dev": "hugo server --disableFastRender",
+    "build": "hugo --gc --minify",
+    "update-downloads": "node scripts/update-downloads.cjs",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "lint:js": "eslint assets/js/**/*.js scripts/**/*.{js,cjs}",
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "lint:html": "htmlhint \"layouts/**/*.html\"",
+    "lint:fix": "npm run lint:js -- --fix && npm run lint:css -- --fix",
+    "prepare": "husky",
+    "test": "jest",
+    "test:all": "npm run test && npm run test:e2e",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.x",
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.16",
+    "alpinejs": "^3.14.9",
+    "autoprefixer": "^10.4.21",
+    "lecture-studio-site": "file:",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "@stylistic/eslint-plugin-js": "^4.4.1",
+    "eslint": "^9.33.0",
+    "htmlhint": "^1.6.3",
+    "husky": "^9.1.7",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^26.1.0",
+    "lint-staged": "^16.1.5",
+    "stylelint": "^16.23.1",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-config-tailwindcss": "^1.0.0"
+  },
+  "lint-staged": {
+    "assets/js/**/*.js": [
+      "eslint --fix"
+    ],
+    "scripts/**/*.js": [
+      "eslint --fix"
+    ],
+    "assets/css/**/*.css": [
+      "stylelint --fix"
+    ],
+    "layouts/**/*.html": [
+      "htmlhint"
+    ]
+  }
+}

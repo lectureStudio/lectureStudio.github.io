@@ -1,0 +1,48 @@
+changelog: |
+  ### Changelog
+  
+  #### lecturePresenter
+  * Stable screen sharing feature.
+  * Record screen shares to MP4 videos along the presentation recording.
+  * Added a participant list for online sessions.
+  * Added JCEF to view own stream within the app.
+  * Fixed various issues with text-boxes.
+  * Fixed various issues with quizzes.
+  * Fixed notifications for dis-connected audio/video devices.
+  * Improved establishment of interrupted connections.
+  
+  #### lectureEditor
+  * Added the split recording feature.
+  * Added the ability to move slide change events without modifying any other parts of the recording.
+  * Added the ability to replace multiple slides in the recording at once.
+  * Added the ability to add new annotations, with the same toolbar as in lecturePresenter.
+  * Audio Loudness Normaliaztion and QoL improvements.
+  * Fixed rendering issues with various tools.
+  * Fixed audio device handling.
+  * Fixed crash on playback of denoised audio.
+  
+  #### Project
+  * Set required Java version to 17.
+
+version: "6.0.912"
+date: "2023-12-21"
+
+platforms:
+  - name: "Windows"
+    description: "Installer für Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.0.912/lectureStudio-6.0.912-windows-x86_64.msi"
+        size: "158.6 MB"
+  - name: "macOS"
+    description: "Installer für macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.0.912/lectureStudio-6.0.912-mac-x86_64.pkg"
+        size: "148.8 MB"
+  - name: "Linux"
+    description: "Pakete für Linux-Distributionen"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.0.912/lectureStudio-6.0.912-linux-x86_64.zip"
+        size: "156.4 MB"

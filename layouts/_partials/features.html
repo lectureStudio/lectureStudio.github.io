@@ -1,0 +1,83 @@
+<section class="py-16 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!-- Get the feature data for the current language -->
+        {{ $lang := $.Site.Language.Lang }}
+        {{ $featuresKey := printf "features_%s" $lang }}
+        {{ $features := index .Site.Data.features $featuresKey }}
+
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">{{ i18n "features.title" }}</h2>
+            <p class="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400">
+                {{ i18n "features.subtitle" }}
+            </p>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            {{ range $features.items }}
+            <div class="flex flex-col p-6 rounded-xl bg-white dark:bg-gray-900 text-gray-950 dark:text-white">
+                <div class="flex items-center gap-x-4 mb-4">
+                    <div class="rounded-lg p-3
+                        {{ if eq .id "digital_ink" }}bg-blue-100 dark:bg-blue-900{{ end }}
+                        {{ if eq .id "easy_to_use" }}bg-amber-100 dark:bg-amber-900{{ end }}
+                        {{ if eq .id "multi_platform" }}bg-purple-100 dark:bg-purple-900{{ end }}
+                        {{ if eq .id "present" }}bg-green-100 dark:bg-green-900{{ end }}
+                        {{ if eq .id "interactive_feedback" }}bg-red-100 dark:bg-red-900{{ end }}
+                        {{ if eq .id "post_processing" }}bg-teal-100 dark:bg-teal-900{{ end }}
+                        {{ if eq .id "pdfpc_functionality" }}bg-indigo-100 dark:bg-indigo-900{{ end }}
+                        {{ if eq .id "on_premise" }}bg-orange-100 dark:bg-orange-900{{ end }}
+                        {{ if eq .id "whiteboard" }}bg-pink-100 dark:bg-pink-900{{ end }}
+                        w-12 h-12 flex items-center justify-center">
+                        <svg class="w-6 h-6
+                            {{ if eq .id "digital_ink" }}text-blue-600 dark:text-blue-300{{ end }}
+                            {{ if eq .id "easy_to_use" }}text-amber-600 dark:text-amber-300{{ end }}
+                            {{ if eq .id "multi_platform" }}text-purple-600 dark:text-purple-300{{ end }}
+                            {{ if eq .id "present" }}text-green-600 dark:text-green-300{{ end }}
+                            {{ if eq .id "interactive_feedback" }}text-red-600 dark:text-red-300{{ end }}
+                            {{ if eq .id "post_processing" }}text-teal-600 dark:text-teal-300{{ end }}
+                            {{ if eq .id "pdfpc_functionality" }}text-indigo-600 dark:text-indigo-300{{ end }}
+                            {{ if eq .id "on_premise" }}text-orange-600 dark:text-orange-300{{ end }}
+                            {{ if eq .id "whiteboard" }}text-pink-600 dark:text-pink-300{{ end }}"
+                            fill="currentColor" fill="none" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            {{ if eq .id "digital_ink" }}
+                            <use href="#digital-ink"/>
+                            {{ end }}
+                            {{ if eq .id "easy_to_use" }}
+                            <use href="#easy-to-use"/>
+                            {{ end }}
+                            {{ if eq .id "multi_platform" }}
+                            <use href="#multi-platform"/>
+                            {{ end }}
+                            {{ if eq .id "present" }}
+                            <use href="#present"/>
+                            {{ end }}
+                            {{ if eq .id "interactive_feedback" }}
+                            <use href="#interactive-feedback"/>
+                            {{ end }}
+                            {{ if eq .id "post_processing" }}
+                            <use href="#post-processing"/>
+                            {{ end }}
+                            {{ if eq .id "pdfpc_functionality" }}
+                            <use href="#pdfpc-functionality"/>
+                            {{ end }}
+                            {{ if eq .id "on_premise" }}
+                            <use href="#on-premise"/>
+                            {{ end }}
+                            {{ if eq .id "whiteboard" }}
+                            <use href="#whiteboard"/>
+                            {{ end }}
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        {{ .title }}
+                    </h3>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 flex-grow">
+                    {{ .text }}
+                </p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

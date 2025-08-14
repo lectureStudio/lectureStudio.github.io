@@ -1,0 +1,54 @@
+changelog: |
+  ### Changelog
+  #### lecturePresenter
+  * Fixed microphone settings (adjustment and recording test)
+  * Fixed recorded slides to PDF export (annotation positions, blending mode and extended/zoomed view)
+  * Fixed scaling of recorded pointer and zoom-rectangle
+  * Simplified slides to PDF export view (less user interaction required)
+  * Option for full screen mode in general settings
+  
+  #### lectureEditor
+  * Simplified recording export options (HTML video player automatically created with the compressed video)
+  * Fixed rendering of text annotations
+  * Fixed inconsistencies with multiple deletions
+  * Shrink selection and glue selection sliders to the main slider
+  * **New feature:** save document to PDF (File - Save document)
+  * **New feature:** replace selected pages with new ones
+  * **New feature (alpha stage):** in-/decrease volume in selected areas
+  
+  <img src="https://user-images.githubusercontent.com/58339654/115860295-9845dc00-a431-11eb-8220-cab93202b512.png" width="400">
+  
+  #### lecturePlayer (Web)
+  * Fixed annotation rendering in preview slides
+  * Improved pointer appearance
+  
+  #### All apps
+  * Fixed language setting
+  * Added notification that a restart of the app is required to take effect of the language setting
+  * Added 'Info' tab to about view
+  * Stabilized Linux and macOS versions
+  * Save and re-use the recently used directory when opening/saving files
+  
+
+version: "4.4.96"
+date: "2021-04-30"
+
+platforms:
+  - name: "Windows"
+    description: "Installer für Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v4.4.96/lectureStudio-4.4.96-windows-x86_64.msi"
+        size: "140.5 MB"
+  - name: "macOS"
+    description: "Installer für macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v4.4.96/lectureStudio-4.4.96-mac-x86_64.pkg"
+        size: "147.3 MB"
+  - name: "Linux"
+    description: "Pakete für Linux-Distributionen"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v4.4.96/lectureStudio-4.4.96-linux-x86_64.zip"
+        size: "155.6 MB"

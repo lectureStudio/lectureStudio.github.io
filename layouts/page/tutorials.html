@@ -1,0 +1,43 @@
+{{ define "main" }}
+    {{ $lang := .Site.Language.Lang }}
+    {{ $tutorials := index .Site.Data.tutorials (printf "tutorials_%s" $lang) }}
+
+    <div class="container mx-auto px-2">
+        <div class="max-w-7xl mx-auto">
+            <!-- Video Tutorials Section -->
+            <div class="">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    {{ range $tutorials }}
+                    <div class="tutorial-card flex flex-col bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden">
+                        <div class="tutorial-content aspect-w-4 aspect-h-3 bg-gray-200 dark:bg-gray-800">
+                            <video class="w-full h-full" preload="metadata" controls>
+                                <source src="{{ .url }}video/{{ .name }}.mp4" type="video/mp4">
+                                Your browser does not support HTML5 video.
+                            </video>
+                        </div>
+                        <div class="tutorial-info flex flex-col h-full p-6">
+                            <h3 class="tutorial-title text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">{{ .title }}</h3>
+                            <p class="tutorial-description h-full text-gray-600 dark:text-gray-400 mb-4">{{ .description }}</p>
+                            <div class="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400 mb-4">
+                                <div class="tutorial-duration flex items-center">
+                                    <svg class="mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                    </svg>
+                                    {{ .duration }}
+                                </div>
+                                <a href="{{ .url }}{{ .name }}.pdf" target="_blank"
+                                   class="mt-auto text-base text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline">
+                                    {{ i18n "tutorials.slides" }}
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ partial "cta.html" . }}
+{{ end }}

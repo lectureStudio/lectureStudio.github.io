@@ -1,0 +1,29 @@
+name: Update Downloads
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update_and_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: "[[ -f package-lock.json ]] && npm ci || true"
+
+      - name: Update downloads
+        run: npm run update-downloads
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .
+          if ! git diff --staged --quiet; then
+            git commit -m "Update download information"
+            git push origin main
+          else
+            echo "No changes to commit."
+          fi

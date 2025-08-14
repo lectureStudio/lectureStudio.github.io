@@ -1,0 +1,45 @@
+changelog: |
+  ## What's Changed
+  
+  ### Bug Fixes
+  
+  - Start stream with muted microphone
+  - Do not react to VAD when settings are opened
+  - Audio device changes for voice activity detection
+  - Process local video frames when the connection is established
+  
+  
+  **Full Changelog**: https://github.com/lectureStudio/lectureStudio/compare/v6.2.0...v6.2.1
+  
+
+version: "6.2.1"
+date: "2025-04-22"
+
+platforms:
+  - name: "Windows"
+    description: "Installer für Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.1/lectureStudio-6.2.1-windows-x86_64.msi"
+        size: "216.1 MB"
+  - name: "macOS"
+    description: "Installer für macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.1/lectureStudio-6.2.1-mac-x86_64.pkg"
+        size: "214.1 MB"
+      - type: "Apple Silicon"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.1/lectureStudio-6.2.1-mac-arm64.pkg"
+        size: "198.8 MB"
+  - name: "Linux"
+    description: "Pakete für Linux-Distributionen"
+    packages:
+      - type: "DEB"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.1/lecturestudio_6.2.1-linux_amd64.deb"
+        size: "206.7 MB"
+      - type: "RPM"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.1/lecturestudio-6.2.1-linux.x86_64.rpm"
+        size: "226.3 MB"
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.1/lectureStudio-6.2.1-linux-x86_64.zip"
+        size: "226.9 MB"

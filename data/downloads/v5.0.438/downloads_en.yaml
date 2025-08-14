@@ -1,0 +1,52 @@
+changelog: |
+  ### Changelog
+  
+  #### New WebRTC based streaming
+  Visit the [streaming portal](https://lecturestudio.dek.e-technik.tu-darmstadt.de) to setup your course you want to stream (**members of TU Darmstadt only**). On the website you will find the manual (currently in German) how to stream and attend your course.
+  
+  #### lecturePresenter
+  * Customizable toolbar.
+  * Added new buttons to the toolbar: previous/next slide, start stream, start quiz, (un)mute microphone and camera for the stream.
+  * Improved audio recording quality: new audio system implementation with high-pass filter, echo cancellation and noise suppression.
+  * Select best native camera format for selected aspect ratio.
+  * Integrated quizzes into streamed courses, including presenting quiz results.
+  * Fixed stylus drawing in fullscreen mode.
+  * Fixed text-field input conflict with some shortcuts.
+  * Fixed close PDF document and saving this document afterwards.
+  * Block quiz-slide selection until the quiz is closed.
+  * Simplified settings.
+  
+  #### lectureEditor
+  * Fixed rare UI render issues on some platforms.
+  * Fixed cutting annotations which manipulate the view state.
+  
+  #### All apps
+  * Append app version to app logs.
+  
+  ### Known Bugs :construction:
+  * Drag and drop of toolbar-buttons does not render the icon of the button dragged into the toolbar on some Linux systems.
+  
+  
+
+version: "5.0.438"
+date: "2022-01-17"
+
+platforms:
+  - name: "Windows"
+    description: "Installer for Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.0.438/lectureStudio-5.0.438-windows-x86_64.msi"
+        size: "158.1 MB"
+  - name: "macOS"
+    description: "Installer for macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.0.438/lectureStudio-5.0.438-mac-x86_64.pkg"
+        size: "170.4 MB"
+  - name: "Linux"
+    description: "Packages for Linux distributions"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.0.438/lectureStudio-5.0.438-linux-x86_64.zip"
+        size: "183.7 MB"

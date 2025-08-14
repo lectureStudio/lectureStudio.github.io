@@ -1,0 +1,200 @@
+{{ define "main" }}
+    <div class="container mx-auto md:px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Get the download data for the current language -->
+            {{ $lang := $.Site.Language.Lang }}
+            {{ $downloadsKey := printf "downloads_%s" $lang }}
+
+            <!-- Get all available versions and sort them using semantic versioning (newest first) -->
+            {{ $versions := slice }}
+            {{ range $dirKey, $dirValue := .Site.Data.downloads }}
+                {{ $versionParts := split (strings.TrimPrefix "v" $dirKey) "." }}
+                {{ $major := index $versionParts 0 | int }}
+                {{ $minor := 0 }}
+                {{ $patch := 0 }}
+                {{ if gt (len $versionParts) 1 }}
+                    {{ $minor = index $versionParts 1 | int }}
+                {{ end }}
+                {{ if gt (len $versionParts) 2 }}
+                    {{ $patch = index $versionParts 2 | int }}
+                {{ end }}
+                {{ $sortKey := add (mul $major 1000000000) (add (mul $minor 1000000) $patch) }}
+                {{ $versions = $versions | append (dict "key" $dirKey "sort" $sortKey) }}
+            {{ end }}
+            {{ $versions = sort $versions "sort" "desc" }}
+            {{ $sortedVersions := slice }}
+            {{ range $version := $versions }}
+                {{ $sortedVersions = $sortedVersions | append $version.key }}
+            {{ end }}
+            {{ $versions = $sortedVersions }}
+
+            <!-- Load data for all versions -->
+            {{ $versionData := dict }}
+            {{ $changelogs := dict }}
+
+            {{ range $version := $versions }}
+                {{ with (index $.Site.Data.downloads $version $downloadsKey) }}
+                    {{ $versionData = merge $versionData (dict $version .) }}
+
+                    <!-- Extract version number without 'v' prefix -->
+                    {{ $versionNumber := strings.TrimPrefix "v" $version }}
+
+                    <!-- Get the changelog for this version -->
+                    {{ with .changelog }}
+                        {{ $changelogs = merge $changelogs (dict $versionNumber .) }}
+                    {{ else }}
+                        {{ $changelogs = merge $changelogs (dict $versionNumber slice) }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            <!-- Initialize platform data -->
+            {{ $platformsData := dict }}
+
+            <!-- Process all versions and organize by platform -->
+            {{ range $version := $versions }}
+                {{ with (index $versionData $version) }}
+                    {{ $versionNumber := strings.TrimPrefix "v" $version }}
+                    {{ $versionDate := .date }}
+                    {{ range $platformIndex, $platform := .platforms }}
+                        <!-- Create a unique key for each platform based on its name -->
+                        {{ $platformKey := $platform.name }}
+                        {{ $versionInfo := dict "version" $versionNumber "date" $versionDate "packages" $platform.packages }}
+
+                        <!-- Check if we've seen this platform before -->
+                        {{ if not (isset $platformsData $platformKey) }}
+                            {{ $platformsData = merge $platformsData (dict $platformKey (dict "name" $platform.name "description" $platform.description "versions" slice)) }}
+                        {{ end }}
+
+                        <!-- Get current platform data -->
+                        {{ $currentPlatform := index $platformsData $platformKey }}
+                        {{ $currentVersions := $currentPlatform.versions }}
+
+                        <!-- Append new version info -->
+                        {{ $updatedVersions := $currentVersions | append $versionInfo }}
+                        {{ $updatedPlatform := merge $currentPlatform (dict "versions" $updatedVersions) }}
+                        {{ $platformsData = merge $platformsData (dict $platformKey $updatedPlatform) }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+
+            <!-- Create platform objects -->
+            {{ $platforms := slice }}
+            {{ range $platformKey, $platformData := $platformsData }}
+                {{ $platforms = $platforms | append $platformData }}
+            {{ end }}
+            {{ $downloadsData := dict "downloads" $platforms "changelogs" $changelogs }}
+
+            <!-- Platform Tabs using Alpine.js -->
+            <div x-data="tabs" class="tabs-container my-6">
+                <div class="tabs-nav border-b border-gray-200 dark:border-gray-700">
+                    <nav class="flex -mb-px" aria-label="Tabs">
+                        <template x-for="(tab, index) in tabs" :key="index">
+                            <button 
+                                class="tab-button py-2 px-1 ml-6 first-of-type:ml-4 border-b-2 font-medium whitespace-nowrap"
+                                :class="activeTab === index ? 
+                                    'border-blue-500 text-blue-600 dark:text-blue-400 dark:border-blue-400' : 
+                                    'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:border-gray-600'"
+                                x-text="tab.name"
+                                @click="activeTab = index">
+                            </button>
+                        </template>
+                    </nav>
+                </div>
+                <div class="tabs-content mt-4">
+                    {{ range $index, $platform := $downloadsData.downloads }}
+                    {{ if $platform }}
+                    <div class="tab-content" data-tab-name="{{ .name }}" data-tab-os="{{ .name }}">
+                        <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden mb-8">
+                            <div class="p-6">
+                                <h2 class="platform-name text-2xl font-bold mb-2">{{ .name }}</h2>
+                                <p class="platform-description text-gray-700 dark:text-gray-300 mb-6">{{ .description }}</p>
+
+                                <!-- Versions Accordion -->
+                                <div class="space-y-4" x-data="versions">
+                                    {{ range $vIndex, $version := .versions }}
+                                    <div class="version-container border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden {{ if gt $vIndex 2 }}older-version{{ end }}" x-show="{{ if gt $vIndex 2 }}isOlderVersionsVisible('{{ $index }}'){{ else }}true{{ end }}">
+                                        <button
+                                                class="version-header w-full flex justify-between items-center p-2 px-4 focus:outline-none {{ if eq $vIndex 0 }}bg-gray-50 dark:bg-gray-900{{ else }}bg-white dark:bg-gray-800{{ end }}"
+                                                @click="toggleVersion('platform-{{ $index }}-version-{{ $vIndex }}')"
+                                                data-version-id="platform-{{ $index }}-version-{{ $vIndex }}"
+                                                data-version-index="{{ $vIndex }}">
+                                            <div class="flex flex-col w-full items-start">
+                                                <span class="platform-version text-lg font-medium">{{ i18n "download.version" }} {{ $version.version }}</span>
+                                                <span class="text-sm text-gray-500 dark:text-gray-400 version-date"
+                                                      x-data="{
+                                                              date: new Date('{{ $version.date }}'),
+                                                              lang: '{{ $.Site.Language.Lang }}'
+                                                          }"
+                                                      x-text="new Intl.DateTimeFormat(lang, { year: 'numeric', month: 'long', day: 'numeric' }).format(date)">
+                                                </span>
+                                            </div>
+                                            <svg class="version-chevron w-5 h-5 transform transition-transform duration-200"
+                                                 :class="isVersionOpen('platform-{{ $index }}-version-{{ $vIndex }}') ? 'rotate-180' : 'rotate-0'"
+                                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <use href="#chevron-down"/>
+                                            </svg>
+                                        </button>
+
+                                        <div id="platform-{{ $index }}-version-{{ $vIndex }}"
+                                             class="version-content p-4 bg-gray-50 dark:bg-gray-900"
+                                             x-show="isVersionOpen('platform-{{ $index }}-version-{{ $vIndex }}')">
+                                            {{ range $pIndex, $package := $version.packages }}
+                                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 p-4 bg-white dark:bg-gray-800 rounded-lg">
+                                                <div>
+                                                    <p class="text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">{{ $package.type }}</p>
+                                                    <p class="text-sm text-gray-500 dark:text-gray-400">{{ i18n "download.file_size" }} : {{ $package.size }}</p>
+                                                </div>
+                                                <a href="{{ $package.url }}"
+                                                   class="mt-3 md:mt-0 inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md transition-colors duration-200">
+                                                    {{ i18n "download.download_button" }}
+                                                    v{{ $version.version }}
+                                                    <svg class="ml-2 w-4 h-4">
+                                                        <use href="#arrow-right"/>
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                            {{ end }}
+
+                                            <div class="mt-4">
+                                                <div class="changelog-content space-y-1">
+                                                    {{ if isset $downloadsData.changelogs $version.version }}
+                                                        {{ $changelog := index $downloadsData.changelogs $version.version }}
+                                                        {{ $changelog | markdownify | safeHTML }}
+                                                    {{ else }}
+                                                        {{ i18n "download.no_changelog" }}
+                                                    {{ end }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{ end }}
+
+                                    <!-- Show More/Less Button -->
+                                    {{ if gt (len .versions) 3 }}
+                                    <div class="text-center mt-4">
+                                        <button 
+                                                @click="showMoreVersions('{{ $index }}')"
+                                                x-show="!isOlderVersionsVisible('{{ $index }}')"
+                                                class="show-more-button px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-md transition-colors duration-200">
+                                            {{ i18n "download.show_more" | default "Show More Versions" }}
+                                        </button>
+                                        <button 
+                                                @click="showLessVersions('{{ $index }}')"
+                                                x-show="isOlderVersionsVisible('{{ $index }}')"
+                                                class="show-less-button px-4 py-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-md transition-colors duration-200">
+                                            {{ i18n "download.show_less" | default "Show Less" }}
+                                        </button>
+                                    </div>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+{{ end }}

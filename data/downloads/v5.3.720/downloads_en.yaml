@@ -1,0 +1,17 @@
+changelog: |
+  ### Changelog
+  
+  #### lecturePresenter
+  * Changed screen-share workflow with multiple document tabs.
+  * Fixed screen-sharing state between multiple shared sources.
+
+version: "5.3.720"
+date: "2022-10-13"
+
+platforms:
+  - name: "Windows"
+    description: "Installer for Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.3.720/lectureStudio-5.3.720-windows-x86_64.msi"
+        size: "135.2 MB"

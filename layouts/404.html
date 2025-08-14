@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}" class="h-full">
+
+{{ partial "head.html" . }}
+
+<body class="flex min-h-full flex-col bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+    {{ partial "nav.html" . }}
+    <main class="grow">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+            <div class="mx-auto max-w-screen-sm text-center flex flex-col justify-center items-center">
+                <p class="text-2xl font-semibold text-blue-600 dark:text-blue-400">404</p>
+                <p class="mt-4 text-balance text-3xl font-semibold tracking-tight sm:text-5xl">{{ i18n "404_message" }}</p>
+                <p class="mt-6 text-pretty text-lg font-medium text-gray-600 dark:text-gray-400 sm:text-xl/8">{{ i18n "404_description" }}</p>
+                <a href="{{ .Site.Home.RelPermalink }}" class="inline-flex text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-6">{{ i18n "404_back" }}</a>
+            </div>   
+        </div>
+    </main>
+    {{ partial "footer.html" . }}
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap files
+Sitemap: {{ .Site.BaseURL }}sitemap.xml
+
+# Disallow some paths that shouldn't be indexed
+Disallow: /404.html
+Disallow: /search/
+Disallow: /tags/
+Disallow: /categories/
+
+# Language-specific sitemaps
+{{ range .Site.Languages }}
+Sitemap: {{ $.Site.BaseURL }}{{ .Lang }}/sitemap.xml
+{{ end }}

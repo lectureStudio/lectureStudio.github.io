@@ -1,0 +1,67 @@
+changelog: |
+  ### Changelog
+  
+  #### lecturePresenter
+  - Added PDFPC time functionalities https://github.com/lectureStudio/lectureStudio/pull/978.
+  - Added stream service heartbeat https://github.com/lectureStudio/lectureStudio/issues/969.
+  - Added a screen inhibition config option.
+  - Fixed ui hanging after opening a document from the command line.
+  - Fixed slide text sort contract issue causing document render empty slides.
+  - Fixed speech menu selected indicator https://github.com/lectureStudio/lectureStudio/issues/967.
+  - Fixed speech positioning https://github.com/lectureStudio/lectureStudio/issues/967.
+  - Fixed recording state propagation on stream start https://github.com/lectureStudio/lectureStudio/issues/935.
+  - Fixed restarting minimized windows for sharing https://github.com/lectureStudio/lectureStudio/issues/954.
+  - Fixed recording path selection https://github.com/lectureStudio/lectureStudio/issues/733.
+  - Fixed stream and messenger state https://github.com/lectureStudio/lectureStudio/issues/379.
+  - Fixed menu state for messenger https://github.com/lectureStudio/lectureStudio/issues/379.
+  - Fixed stopping all screen recordings.
+  - Show error on record page failure.
+  
+  #### lectureEditor
+  - Fixed audio clicks at the beginning of the recording https://github.com/lectureStudio/lectureStudio/issues/977.
+  - Fixed PDF slide export https://github.com/lectureStudio/lectureStudio/issues/976.
+  - Fixed time marker position after splitting https://github.com/lectureStudio/lectureStudio/issues/973.
+  - Fast video rendering https://github.com/lectureStudio/lectureStudio/pull/944.
+  - Fixed video seeking by taking a performance hit https://github.com/lectureStudio/lectureStudio/issues/957.
+  - Slower but precise video seeking https://github.com/lectureStudio/lectureStudio/issues/946.
+  - Fixed playing paused screen recordings https://github.com/lectureStudio/lectureStudio/issues/948.
+  - Fixed opening recording files via double click https://github.com/lectureStudio/lectureStudio/issues/945.
+  - Fixed page image rendering after the end of video.
+  - Fixed annotation over video rendering.
+  - Added feature to insert PDF pages.
+  
+  #### Project
+  - Updated dependencies having reported CVEs.
+  - Fixed macOS builds by using the notarytool.
+
+version: "6.1.1025"
+date: "2024-12-16"
+
+platforms:
+  - name: "Windows"
+    description: "Installer for Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.1025/lectureStudio-6.1.1025-windows-x86_64.msi"
+        size: "211.5 MB"
+  - name: "macOS"
+    description: "Installer for macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.1025/lectureStudio-6.1.1025-mac-x86_64.pkg"
+        size: "198.5 MB"
+      - type: "Apple Silicon"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.1025/lectureStudio-6.1.1025-mac-arm64.pkg"
+        size: "197.6 MB"
+  - name: "Linux"
+    description: "Packages for Linux distributions"
+    packages:
+      - type: "DEB"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.1025/lecturestudio_6.1.1025-linux_amd64.deb"
+        size: "188.4 MB"
+      - type: "RPM"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.1025/lecturestudio-6.1.1025-linux.x86_64.rpm"
+        size: "206.8 MB"
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.1025/lectureStudio-6.1.1025-linux-x86_64.zip"
+        size: "207.2 MB"

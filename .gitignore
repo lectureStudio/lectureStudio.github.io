@@ -1,0 +1,51 @@
+# Hugo default output directory
+public/
+
+# Hugo generated resources directory
+resources/
+
+# Generated files by hugo
+.hugo_build.lock
+
+# Test files
+test-results
+playwright-report
+
+# Temporary files
+.temp
+.tmp
+.cache
+*.swp
+*.swo
+*~
+
+# Linter cache files
+.eslintcache
+.stylelintcache
+.htmlhintrc.json
+
+# Node.js dependencies
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# IDE specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

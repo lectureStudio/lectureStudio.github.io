@@ -1,0 +1,22 @@
+{{- $title := .Title -}}
+{{- $attrs := .Attributes -}}
+{{- $target := "" -}}
+{{- if $attrs }}
+  {{- with index $attrs "target" }}{{ $target = . }}{{ end -}}
+{{- end -}}
+{{- $isBlank := or (eq $target "_blank") (or (eq $title "_blank") (or (eq $title "blank") (eq $title "newtab"))) -}}
+{{- $rel := "" -}}
+{{- if $attrs }}
+  {{- with index $attrs "rel" }}{{ $rel = . }}{{ end -}}
+{{- end -}}
+{{- $showTitle := and $title (not (or (eq $title "_blank") (eq $title "blank") (eq $title "newtab"))) -}}
+{{- $finalRel := "" -}}
+{{- if $rel }}
+  {{- $finalRel = $rel -}}
+{{- else if $isBlank }}
+  {{- $finalRel = "noopener noreferrer" -}}
+{{- end -}}
+<a href="{{ .Destination | safeURL }}"{{ if $showTitle }} title="{{ $title }}"{{ end }}{{ if $isBlank }} target="_blank"{{ end }}{{ if $finalRel }} rel="{{ $finalRel }}"{{ end }} class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline">
+    {{- with .Text | safeHTML }}{{ . }}{{ end -}}
+</a>
+{{- /* chomp trailing newline */ -}}

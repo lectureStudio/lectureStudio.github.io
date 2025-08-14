@@ -1,0 +1,41 @@
+changelog: |
+  ### Changelog
+  
+  #### lecturePresenter
+  * Added the most relevant features of pdfpc (a GTK-based presentation application).
+  * Added participant banning from the participant list.
+  
+  #### lectureEditor
+  * Fixed missing slide-view on Linux (#870)
+  * Fixed deletion of pages by moving page events in the timeline (#864)
+  
+  #### Project
+  * Updated to the latest version of MuPDF (1.23.10).
+  * Added Apple Silicon native library support.
+  * Apple Silicon builds will be from now on released for the Mac.
+
+version: "6.1.920"
+date: "2024-02-16"
+
+platforms:
+  - name: "Windows"
+    description: "Installer for Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.920/lectureStudio-6.1.920-windows-x86_64.msi"
+        size: "182.5 MB"
+  - name: "macOS"
+    description: "Installer for macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.920/lectureStudio-6.1.920-mac-x86_64.pkg"
+        size: "170.8 MB"
+      - type: "Apple Silicon"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.920/lectureStudio-6.1.920-mac-arm64.pkg"
+        size: "172.1 MB"
+  - name: "Linux"
+    description: "Packages for Linux distributions"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.920/lectureStudio-6.1.920-linux-x86_64.zip"
+        size: "180.0 MB"

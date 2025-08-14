@@ -1,0 +1,58 @@
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>{{ block "title" . }}
+        {{- if .IsHome }}{{ .Title }} - {{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end -}}
+    {{ end }}</title>
+
+    {{ range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+    {{ end }}
+
+    <!-- Preload critical resources -->
+    {{ $main := resources.Get "js/main.js" | js.Build | resources.Minify | fingerprint }}
+    <link rel="preload" href="{{ $main.RelPermalink }}" as="script">
+    <script src="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}" defer></script>
+
+    <!-- Meta tags -->
+    {{- if .Description }}
+        <meta name="description" content="{{ .Description }}"/>
+    {{ else }}
+        <meta name="description" content="{{ .Site.Params.Description | default .Site.Title }}"/>
+    {{ end -}}
+    {{- if .Keywords }}
+        <meta name="keywords" content="{{ delimit .Keywords " ," }}" />
+    {{ end -}}
+    {{- if .Params.Author }}
+        <meta name="author" content="{{ .Params.Author}}"/>
+    {{ else if .Site.Params.author }}
+        <meta name="author" content="{{ .Site.Params.author }}"/>
+    {{ end -}}
+    {{ hugo.Generator }}
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ .Permalink }}" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{{ "favicon/favicon-96x96.png" | relURL }}" sizes="96x96" />
+    <link rel="shortcut icon" href="{{ "favicon/favicon.ico" | relURL }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicon/apple-touch-icon.png" | relURL }}" />
+    <meta name="apple-mobile-web-app-title" content="lectureStud" />
+    <link rel="manifest" href="{{ "site.webmanifest" | relURL }}" />
+
+    {{ partialCached "css.html" . }}
+    {{ partial "css-dynamic.html" . }}
+
+    {{ partial "svg-symbols.html" . }}
+
+    <script>
+        // On page load, set the initial theme to avoid FOUC
+        // This will be replaced by the Alpine.js theme component after initialization
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        }
+        else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>

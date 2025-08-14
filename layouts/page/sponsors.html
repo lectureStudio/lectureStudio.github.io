@@ -1,0 +1,26 @@
+{{ define "main" }}
+    {{ $lang := .Site.Language.Lang }}
+    {{ $sponsorsKey := printf "sponsors_%s" $lang }}
+
+    <div class="space-y-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {{ range index .Site.Data.sponsors $sponsorsKey }}
+            <div class="sponsor-card bg-white dark:bg-gray-900 text-gray-950 dark:text-white rounded-lg shadow-md p-6 flex flex-col items-center">
+                {{ $logoPath := strings.TrimPrefix "/" .logo }}
+                {{ $svg := resources.Get $logoPath | fingerprint }}
+                <div class="flex h-24 mb-4">
+                    {{ with $svg }}
+                        {{ .Content | replaceRE "<svg" "<svg class=\"w-full h-auto max-h-24 preserve-aspect-ratio\"" | safeHTML }}
+                    {{ end }}
+                </div>
+                <h3 class="sponsor-name text-center text-xl md:text-base lg:text-xl font-semibold">{{ .name }}</h3>
+                <p class="sponsor-description text-gray-700 dark:text-gray-400 text-center mt-2">{{ .description }}</p>
+                <a href="{{ .url }}" target="_blank"
+                   class="pt-4 mt-auto text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 hover:underline">
+                    {{ $.Params.text.visit }}
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+{{ end }}

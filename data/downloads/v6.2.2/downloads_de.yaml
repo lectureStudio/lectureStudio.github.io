@@ -1,0 +1,105 @@
+changelog: |
+  ## What's Changed
+  
+  ### Bug Fixes
+  
+  - *(presenter)* Set more default buttons in the toolbar
+  - *(presenter)* Scale incoming video frames with AffineTransformOp
+  - *(presenter)* Buffer video frames for conversion
+  - *(presenter)* Remaining video tiles after closing a ([#1012](https://github.com/lectureStudio/lectureStudio/issues/1012))
+  - *(presenter)* Get document title after the document was ([#1015](https://github.com/lectureStudio/lectureStudio/issues/1015))
+  - *(presenter)* Add debug logging for presentation view updates and screen handling
+  - *(presenter)* Adjust heartbeat interval and duration
+  - *(presenter)* Improve video frame handling and memory management
+  - *(presenter)* Optimize video frame conversion and memory ([#1018](https://github.com/lectureStudio/lectureStudio/issues/1018))
+  - *(presenter)* Fix main view repaint after showing stacked dialogs
+  - *(presenter)* Show notify to record notification while in ([#1028](https://github.com/lectureStudio/lectureStudio/issues/1028))
+  - *(presenter)* Closing heartbeat notification
+  - *(presenter)* Add logging for heartbeat request failures and improve event handling
+  - *(presenter)* Auto grid on external displays
+  - *(presenter)* Update phrasing for speech ([#1032](https://github.com/lectureStudio/lectureStudio/issues/1032))
+  - *(presenter)* Undo/redo for the text ([#29](https://github.com/lectureStudio/lectureStudio/issues/29))
+  - *(presenter)* Improve access token validation and error handling in stream ([#380](https://github.com/lectureStudio/lectureStudio/issues/380))
+  - *(presenter)* Memory leak caused by screen-share while ([#1018](https://github.com/lectureStudio/lectureStudio/issues/1018))
+  - *(editor)* Consume mouse event on selection change in the ([#936](https://github.com/lectureStudio/lectureStudio/issues/936))
+  - *(editor)* Adjust stroke widths for pen, highlighter, and ([#1020](https://github.com/lectureStudio/lectureStudio/issues/1020))
+  - *(editor)* Improve seek ([#1023](https://github.com/lectureStudio/lectureStudio/issues/1023))
+  - *(editor)* Fix saving single ([#1021](https://github.com/lectureStudio/lectureStudio/issues/1021))
+  - *(editor)* Improve event handling on recording changes
+  - *(editor)* Scaling and positioning of recorded video frames
+  - *(editor)* Select the video export option by default in VideoExportPresenter
+  - *(editor)* Seek state handling in ([#507](https://github.com/lectureStudio/lectureStudio/issues/507))
+  - *(editor)* View update caused by regression in fix ([#1019](https://github.com/lectureStudio/lectureStudio/issues/1019)) ([#1027](https://github.com/lectureStudio/lectureStudio/issues/1027))
+  - *(editor)* View update regression when changing recorded events
+  - *(editor)* Unnecessarily setting the current recording to ([#1019](https://github.com/lectureStudio/lectureStudio/issues/1019))
+  - *(player)* Allow opening files with drag&drop ([#1026](https://github.com/lectureStudio/lectureStudio/issues/1026))
+  - *(core)* Screen handling logic and enhance ([#1031](https://github.com/lectureStudio/lectureStudio/issues/1031))
+  - *(core)* Compare in logical display space instead of pixel space
+  - *(core)* Typo in PageEditEvent
+  - *(core)* Add shape paint event on shape removal
+  - *(core)* Handle exception during buffer release in ([#884](https://github.com/lectureStudio/lectureStudio/issues/884))
+  - *(core)* Ensure legal file names in file chooser and recording processes
+  - *(tests)* Update Screen initialization
+  
+  ### Refactor
+  
+  - *(presenter)* ScreenRecorderService to drop the ffmpeg cli muxer and added FFmpegMuxer implemented with JavaCV
+  
+  ### Other
+  
+  - *(deps)* Bump org.springframework:spring-context in /lect-web-api ([#1022](https://github.com/lectureStudio/lectureStudio/issues/1022))
+  - *(build)* New windows msi/exe bundle creation
+  - *(build)* Update GitHub workflows to use the new windows bundle
+  - *(build)* Update Windows runner version to 2022 in CI configurations
+  - *(build)* Set up WiX in GitHub workflows
+  - *(build)* Build workflow to upload only the lectureStudio exe bundle
+  
+  ### Documentation
+  
+  - Presentation view java docs
+  - Recording player and service documentation
+  - Enhance documentation for event execution classes and methods
+  - Improve documentation and clarify method descriptions for the presentation context
+  
+  ### Miscellaneous Tasks
+  
+  - Drop dead code
+  
+  
+  ## New Contributors
+  * @thrimbor made their first contribution in [#1026](https://github.com/lectureStudio/lectureStudio/pull/1026)
+  
+  **Full Changelog**: https://github.com/lectureStudio/lectureStudio/compare/v6.2.1...v6.2.2
+  
+
+version: "6.2.2"
+date: "2025-07-11"
+
+platforms:
+  - name: "Windows"
+    description: "Installer für Windows 10/11"
+    packages:
+      - type: "EXE"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.2/lectureStudio-6.2.2-windows-x86_64.exe"
+        size: "205.4 MB"
+  - name: "macOS"
+    description: "Installer für macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.2/lectureStudio-6.2.2-mac-x86_64.pkg"
+        size: "214.2 MB"
+      - type: "Apple Silicon"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.2/lectureStudio-6.2.2-mac-arm64.pkg"
+        size: "199.3 MB"
+  - name: "Linux"
+    description: "Pakete für Linux-Distributionen"
+    packages:
+      - type: "DEB"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.2/lecturestudio_6.2.2-linux_amd64.deb"
+        size: "206.7 MB"
+      - type: "RPM"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.2/lecturestudio-6.2.2-linux.x86_64.rpm"
+        size: "226.4 MB"
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.2.2/lectureStudio-6.2.2-linux-x86_64.zip"
+        size: "227.0 MB"

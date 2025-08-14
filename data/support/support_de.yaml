@@ -1,0 +1,17 @@
+- title: Unterstützung
+  description: Erhalten Sie technischen Support und Software-Unterstützung.
+  contact: Kontakt zur Unterstützung
+  icon: support
+  url: mailto:lecturestudio@esa.tu-darmstadt.de
+
+- title: FAQ
+  description: In unseren FAQ finden Sie Antworten auf eventuelle Fragen.
+  contact: FAQ ansehen
+  icon: faq
+  url: /faq
+
+- title: E-learning
+  description: Kontaktieren Sie das E-Learning-Team des Fachbereichs etit (FB18).
+  contact: Eine E-Mail schreiben
+  icon: elearning
+  url: mailto:e-learning@etit.tu-darmstadt.de

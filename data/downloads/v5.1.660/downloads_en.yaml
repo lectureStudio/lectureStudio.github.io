@@ -1,0 +1,41 @@
+changelog: |
+  ### Changelog
+  
+  #### lecturePresenter
+  * 🆕 Select PDF document templates for whiteboards, quizzes and message slides.
+  * Changed quiz file storage format which fixed multiple quiz format related bugs.
+  * Simplified, removed old and unsupported settings.
+  * Fixed page removal with whiteboards.
+  * Added device selection dialog prior starting a recording.
+  * Fixed Linux build for older (e.g. Ubuntu 16.04) systems.
+  * Closed memory leak while recording.
+  
+  #### lectureEditor
+  * Reintroduced deletion of single actions without markers.
+  * Faster waveform generation.
+  * Increased zoom level for the waveform.
+  * Fixed rendering issues with the timeline.
+  * Fixed zoomed view-port rendering.
+
+version: "5.1.660"
+date: "2022-06-15"
+
+platforms:
+  - name: "Windows"
+    description: "Installer for Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.1.660/lectureStudio-5.1.660-windows-x86_64.msi"
+        size: "125.5 MB"
+  - name: "macOS"
+    description: "Installer for macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.1.660/lectureStudio-5.1.660-mac-x86_64.pkg"
+        size: "132.5 MB"
+  - name: "Linux"
+    description: "Packages for Linux distributions"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.1.660/lectureStudio-5.1.660-linux-x86_64.zip"
+        size: "141.0 MB"

@@ -1,0 +1,51 @@
+{{- /* 
+  Image shortcode with optional width/height and fingerprinting
+
+  Usage:
+  {{< image src="path/to/image.jpg" alt="Alt text" width="500" height="300" class="custom-class" >}}
+
+  Parameters:
+  - src: (required) Path to the image relative to the current page or assets directory
+  - alt: (optional) Alternative text for the image
+  - width: (optional) Width of the image
+  - height: (optional) Height of the image
+  - class: (optional) CSS class(es) to apply to the image
+
+  The image will be fingerprinted automatically for cache busting if found in assets.
+  The shortcode also adds lazy loading and async decoding for performance.
+*/ -}}
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $width := .Get "width" | default "" -}}
+{{- $height := .Get "height" | default "" -}}
+{{- $class := .Get "class" | default "" -}}
+
+{{- /* Get the image resource and fingerprint it */ -}}
+{{- $image := resources.Get $src -}}
+{{- $imgSrc := "" -}}
+
+{{- if $image -}}
+  {{- /* If image is found in assets, fingerprint it */ -}}
+  {{- $fingerprinted := $image | fingerprint -}}
+  {{- $imgSrc = $fingerprinted.RelPermalink -}}
+{{- else -}}
+  {{- /* Try to get the image as a page resource */ -}}
+  {{- $pageResource := .Page.Resources.GetMatch $src -}}
+
+  {{- if $pageResource -}}
+    {{- /* If image is found as a page resource, use its permalink */ -}}
+    {{- $imgSrc = $pageResource.RelPermalink -}}
+  {{- else -}}
+    {{- /* If image is not in assets or page resources, assume it's in the content directory */ -}}
+    {{- $imgSrc = $src -}}
+  {{- end -}}
+{{- end -}}
+
+<img src="{{ $imgSrc }}" 
+  {{- with $alt }} alt="{{ . }}"{{ else }} alt="lectureStudio image"{{ end }}
+  {{- with $width }} width="{{ . }}"{{ end }}
+  {{- with $height }} height="{{ . }}"{{ end }}
+  {{- with $class }} class="{{ . }}"{{ end }}
+  loading="lazy"
+  decoding="async"
+/>

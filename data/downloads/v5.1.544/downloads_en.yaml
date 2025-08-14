@@ -1,0 +1,46 @@
+changelog: |
+  ### Changelog
+  
+  #### lecturePresenter
+  * Fixed and improved many quiz related issues (handling, rendering, etc.).
+  * Introduced new multi-screen layout options for the main view.
+      * Create external windows for messages, speech, and slide preview.
+  * Change position of tabs in the main view.
+  * Show received text messages on slides that can be recorded and shared via stream.
+  * Improved local camera image quality.
+  * Improved stream event handling.
+  * Quality based selection of camera stream profiles.
+  
+  #### lectureEditor
+  * Fixed audio playback device selection when device is gone.
+  * Fixed rare cases of cutting tool events.
+  
+  #### All apps
+  * Updated dependencies that have security issues fixed.
+  
+  ### Known Bugs :construction:
+  * Drag and drop of toolbar-buttons does not render the icon of the button dragged into the toolbar on some Linux systems.
+  
+
+version: "5.1.544"
+date: "2022-03-28"
+
+platforms:
+  - name: "Windows"
+    description: "Installer for Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.1.544/lectureStudio-5.1.544-windows-x86_64.msi"
+        size: "122.8 MB"
+  - name: "macOS"
+    description: "Installer for macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.1.544/lectureStudio-5.1.544-mac-x86_64.pkg"
+        size: "129.8 MB"
+  - name: "Linux"
+    description: "Packages for Linux distributions"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.1.544/lectureStudio-5.1.544-linux-x86_64.zip"
+        size: "140.0 MB"

@@ -1,0 +1,71 @@
+{{ $ctx := .context | default . }}
+<div x-data="dropdown" x-id="['dropdown-button']"
+     x-on:keydown.escape.prevent.stop="close($refs.button)"
+     @keydown.escape.stop="close(); focusButton()"
+     @click.away="onClickAway($event)"
+     class="relative w-full inline-block text-left">
+    <button type="button"
+            class="{{ if (default false $.collapsed) }}px-4 hover:bg-gray-100 dark:hover:bg-gray-700/50 dark:hover:text-white{{else}} rounded {{ end }} flex items-baseline justify-between w-full py-2 px-0 text-sm font-semibold"
+            id="menu-button" x-ref="button"
+            @click="onButtonClick()"
+            aria-expanded="true" aria-haspopup="true"
+            x-bind:aria-expanded="open.toString()">
+        <span class="flex items-center">
+            <svg class="w-5 h-5 mr-2" width="16" height="16" aria-hidden="true">
+                <use href="#flag-{{ $ctx.Lang }}"/>
+            </svg>
+            <span class="uppercase mb-0.5">
+                {{ range $ctx.Site.Home.AllTranslations }}
+                    {{ if eq .Lang $ctx.Lang }}
+                        {{ .Lang }}
+                    {{ end }}
+                {{ end }}
+            </span>
+        </span>
+        <svg class="self-center w-2.5 h-2.5 ms-2.5" aria-hidden="true">
+            <use href="#chevron-down"/>
+        </svg>
+    </button>
+    <div x-show="open"
+         x-transition:enter="transition ease-out duration-100"
+         x-transition:enter-start="transform opacity-0 scale-95"
+         x-transition:enter-end="transform opacity-100 scale-100"
+         x-transition:leave="transition ease-in duration-75"
+         x-transition:leave-start="transform opacity-100 scale-100"
+         x-transition:leave-end="transform opacity-0 scale-95"
+         class="{{ if not (default false $.collapsed) }}mt-2 md:absolute md:w-32 md:origin-top-right md:rounded-md md:shadow-lg md:ring-1 md:ring-black/5 md:dark:ring-gray-700{{ end }} relative right-0 z-10 w-full bg-white dark:bg-gray-800 focus:outline-hidden"
+         x-ref="menu-items" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1"
+         @keydown.tab="close()"
+         @keydown.enter.prevent="close(); focusButton()"
+         @keyup.space.prevent="close(); focusButton()">
+        <div class="py-1 text-sm text-gray-700 dark:text-gray-300" role="none">
+            {{ $currentPage := $ctx }}
+            {{ if $ctx.IsTranslated }}
+                {{ range $ctx.Translations }}
+                    <a href="{{ .RelPermalink }}"
+                       class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700/50 dark:hover:text-white">
+                        <svg class="w-5 h-5 mr-2" width="16" height="16" aria-hidden="true">
+                            <use href="#flag-{{ .Lang }}"/>
+                        </svg>
+                        {{ .Language.LanguageName }}
+                    </a>
+                {{ end }}
+            {{ else }}
+                {{ range $ctx.Site.Home.AllTranslations }}
+                    {{ if ne .Lang $currentPage.Lang }}
+                        <a href="{{ .RelPermalink }}"
+                           class="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700/50 dark:hover:text-white">
+                            <svg class="w-5 h-5 mr-2" width="16" height="16" aria-hidden="true">
+                                <use href="#flag-{{ .Lang }}"/>
+                            </svg>
+                            {{ .Language.LanguageName }}
+                        </a>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            {{ if (default false $.collapsed) }}
+                <hr class="my-1 border-t border-gray-200 dark:border-gray-700" />
+            {{ end }}
+        </div>
+    </div>
+</div>

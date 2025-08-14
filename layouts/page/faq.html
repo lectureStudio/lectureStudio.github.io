@@ -1,0 +1,33 @@
+{{ define "main" }}
+    {{ $lang := .Site.Language.Lang }}
+    {{ $faqItems := index (index .Site.Data.faq (printf "faq_%s" $lang)) }}
+
+    <div class="max-w-4xl mx-auto divide-y divide-gray-200 dark:divide-gray-800">
+        {{ range $index, $item := $faqItems }}
+            {{ $content := $item.answer | markdownify }}
+            {{ $content := replace $content "\n" "<br>" | safeHTML }}
+            <div x-data="{ open: false }" class="faq-item py-6">
+                <button type="button"
+                        class="flex justify-between items-center w-full text-left focus:outline-none"
+                        @click="open = !open">
+                    <span class="faq-question text-lg font-medium">{{ $item.question }}</span>
+                    <span class="ml-6 flex-shrink-0">
+                        <svg id="faq-icon-{{ $index }}"
+                             class="h-6 w-6 transform transition-transform duration-200 text-gray-500 dark:text-gray-400"
+                             :class="open ? 'rotate-180' : 'rotate-0'">
+                            <use href="#chevron-down"/>
+                        </svg>
+                    </span>
+                </button>
+                <div id="faq-{{ $index }}"
+                     x-show="open"
+                     class="mt-4 pr-12 text-base text-gray-500 dark:text-gray-400"
+                     :class="{ 'hidden': !open }">
+                    <p class="faq-answer">{{ $content | safeHTML }}</p>
+                </div>
+            </div>
+        {{ end }}
+    </div>
+
+    {{ partial "cta.html" . }}
+{{ end }}

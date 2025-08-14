@@ -1,0 +1,9 @@
+baseURL: "https://lecturestudio.org/"
+defaultContentLanguage: en
+defaultContentLanguageInSubdir: true
+disableDefaultLanguageRedirect: true
+languageCode: "en-GB"
+title: "lectureStudio"
+
+# SEO Configuration
+enableRobotsTXT: true

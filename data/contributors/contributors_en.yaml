@@ -1,0 +1,30 @@
+- name: Andreas Koch
+  mail: koch@esa.tu-darmstadt.de
+  contributions:
+    - Initial Concept
+    - Field Testing
+  firm: |
+    Technical University of Darmstadt
+    Department of Computer Science
+  department: Embedded Systems and Applications Group
+  url: https://www.esa.informatik.tu-darmstadt.de/
+
+- name: Andy Schürr
+  mail: andy.schuerr@es.tu-darmstadt.de
+  contributions:
+    - Concept
+    - Field Testing
+  firm: |
+    Technical University of Darmstadt
+    Department of Electrical Engineering and Information Technology
+  department: Real-Time Systems Lab
+  url: https://www.es.tu-darmstadt.de/en/es
+
+- name: Alex Andres
+  mail: alexej.andres@es.tu-darmstadt.de
+  contributions:
+    - Developer
+  firm: |
+    Technical University of Darmstadt
+  department: Real-Time Systems Lab
+  url: https://www.es.tu-darmstadt.de/en/es

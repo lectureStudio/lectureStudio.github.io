@@ -1,0 +1,37 @@
+changelog: |
+  ### Changelog
+  
+  #### lecturePresenter
+  * Removed save quiz results menu item. Quiz results still can be saved via document export.
+  * Preserve compatibility to old configs.
+  * Configurable streaming server name in stream settings.
+  * Fixed drag and drop of toolbar-buttons that now render the icon dragged into the toolbar on Linux systems.
+  * Fixed package version number on Linux systems.
+  * Fixed starting a stream without any connected cameras on Linux.
+  
+  #### lectureEditor
+  * Fixed STA vs. MTA issue which blocked the usage of audio playback devices on some systems.
+  
+
+version: "5.1.555"
+date: "2022-04-04"
+
+platforms:
+  - name: "Windows"
+    description: "Installer für Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.1.555/lectureStudio-5.1.555-windows-x86_64.msi"
+        size: "122.8 MB"
+  - name: "macOS"
+    description: "Installer für macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.1.555/lectureStudio-5.1.555-mac-x86_64.pkg"
+        size: "129.8 MB"
+  - name: "Linux"
+    description: "Pakete für Linux-Distributionen"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.1.555/lectureStudio-5.1.555-linux-x86_64.zip"
+        size: "140.0 MB"

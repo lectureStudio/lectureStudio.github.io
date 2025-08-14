@@ -1,0 +1,31 @@
+/*
+ * TailwindCSS base styles
+ * see https://tailwindcss.com/docs/functions-and-directives#tailwind
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
+
+/*
+ * Put site specific css styles here using the @layer directive
+ * see https://tailwindcss.com/docs/functions-and-directives#layer
+ */
+@layer components {
+    /* Not used */
+}
+
+@keyframes draw {
+    0% {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+    }
+    100% {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 0;
+    }
+}
+
+.animate-draw {
+    animation: draw 3s ease-in-out infinite;
+}

@@ -1,0 +1,14 @@
+- name: "Sonderforschungsbereich 1053"
+  logo: "/images/sponsors/logo-maki.svg"
+  description: "MAKI – Multi-Mechanismen-Adaption für das künftige Internet"
+  url: "https://www.maki.tu-darmstadt.de"
+
+- name: "Technische Universität Darmstadt"
+  logo: "/images/sponsors/logo-fb18.svg"
+  description: "Fachbereich Elektrotechnik und Informationstechnik (FB18)"
+  url: "https://www.etit.tu-darmstadt.de"
+
+- name: "Technische Universität Darmstadt"
+  logo: "/images/sponsors/logo-fb20.svg"
+  description: "Fachbereich Informatik (FB20)"
+  url: "https://www.informatik.tu-darmstadt.de"

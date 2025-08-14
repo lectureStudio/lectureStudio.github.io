@@ -1,0 +1,8 @@
+{{ $page := index (split .RelPermalink "/") 2 }}
+{{ $pageJs := resources.Get (printf "/js/%s.js" $page) }}
+
+{{ if $pageJs }}
+    {{ $js := $pageJs | js.Build | resources.Minify | fingerprint }}
+
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+{{ end }}

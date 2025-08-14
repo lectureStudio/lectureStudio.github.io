@@ -1,0 +1,34 @@
+changelog: |
+  ### Changelog
+  
+  #### lecturePresenter
+  * Added screen-sharing.
+  * Added stream participants list.
+  * Send chat messages to all participants.
+  * Receive private chat messages.
+  
+  #### lectureEditor
+  * Fixed import of recordings with a different audio format.
+
+version: "5.3.710"
+date: "2022-09-26"
+
+platforms:
+  - name: "Windows"
+    description: "Installer für Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.3.710/lectureStudio-5.3.710-windows-x86_64.msi"
+        size: "135.3 MB"
+  - name: "macOS"
+    description: "Installer für macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.3.710/lectureStudio-5.3.710-mac-x86_64.pkg"
+        size: "142.2 MB"
+  - name: "Linux"
+    description: "Pakete für Linux-Distributionen"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.3.710/lectureStudio-5.3.710-linux-x86_64.zip"
+        size: "152.4 MB"

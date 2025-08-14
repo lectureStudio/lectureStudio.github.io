@@ -1,0 +1,30 @@
+main:
+  - name: Documentation
+    pageRef: /documentation
+    weight: 10
+  - name: Download
+    pageRef: /download
+    weight: 20
+  - name: Tutorials
+    pageRef: /tutorials
+    weight: 30
+  - name: FAQ
+    pageRef: /faq
+    weight: 40
+  - name: Sponsors
+    pageRef: /sponsors
+    weight: 50
+  - name: Contact
+    pageRef: /contact
+    weight: 60
+
+footer:
+  - name: Imprint
+    pageRef: https://www.informatik.tu-darmstadt.de/impressum.en.jsp
+    weight: 10
+  - name: Data Privacy Statement
+    pageRef: https://www.tu-darmstadt.de/datenschutzerklaerung.en.jsp
+    weight: 20
+  - name: Contact
+    pageRef: /contact
+    weight: 30

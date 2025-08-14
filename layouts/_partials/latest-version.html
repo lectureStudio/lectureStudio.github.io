@@ -1,0 +1,14 @@
+{{ $latest := "" }}
+{{ $highest := -1 }}
+{{ range $key, $val := .Site.Data.downloads }}
+    {{ $parts := split (strings.TrimPrefix "v" $key) "." }}
+    {{ $major := index $parts 0 | int }}
+    {{ $minor := cond (ge (len $parts) 2) (index $parts 1 | int) 0 }}
+    {{ $patch := cond (ge (len $parts) 3) (index $parts 2 | int) 0 }}
+    {{ $sortKey := add (mul $major 1000000000) (add (mul $minor 1000000) $patch) }}
+    {{ if gt $sortKey $highest }}
+        {{ $highest = $sortKey }}
+        {{ $latest = $key }}
+    {{ end }}
+{{ end }}
+{{ return $latest }}

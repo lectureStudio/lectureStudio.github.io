@@ -1,0 +1,30 @@
+changelog: |
+  ### Changelog
+  
+  #### lecturePresenter
+  * Changed screen-share workflow with multiple document tabs.
+  * Fixed screen-sharing state between multiple shared sources.
+  * Fixed stopping running screen-share.
+
+version: "5.3.725"
+date: "2022-10-13"
+
+platforms:
+  - name: "Windows"
+    description: "Installer for Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.3.725/lectureStudio-5.3.725-windows-x86_64.msi"
+        size: "135.2 MB"
+  - name: "macOS"
+    description: "Installer for macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.3.725/lectureStudio-5.3.725-mac-x86_64.pkg"
+        size: "142.2 MB"
+  - name: "Linux"
+    description: "Packages for Linux distributions"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v5.3.725/lectureStudio-5.3.725-linux-x86_64.zip"
+        size: "150.8 MB"

@@ -1,0 +1,23 @@
+<ul class="{{ if .Section.Parent }}pl-4 mt-1{{ else }}space-y-1{{ end }} text-sm">
+    {{ range sort .Section.Pages "Weight" }}
+    <li class="transition-colors duration-200 {{ if not .IsSection }}mb-1{{ end }}">
+        {{ $isCurrentPage := eq .RelPermalink $.Page.RelPermalink }}
+        {{ $isActive := or $isCurrentPage (and (hasPrefix $.Page.RelPermalink .RelPermalink) (ne $.Page.RelPermalink .RelPermalink)) }}
+        <a href="{{ .RelPermalink }}" 
+           class="block py-1 px-2 rounded hover:bg-gray-200 dark:hover:bg-gray-800/80 {{ if $isCurrentPage }}bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-medium{{ else if $isActive }}text-blue-700 dark:text-blue-300{{ else }}text-gray-700 dark:text-gray-400{{ end }} flex items-center group">
+            {{ if .IsSection }}
+                <svg class="w-3 h-3 mr-1 {{ if $isActive }}text-blue-500{{ else }}text-gray-500 dark:text-gray-400{{ end }} group-hover:text-blue-400 transition-colors duration-150" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+            {{ else }}
+                <span class="w-3 h-3 mr-1"></span>
+            {{ end }}
+            <span>{{ .Title }}</span>
+        </a>
+
+        {{ if .IsSection }}
+            {{ partial "docs/sidebar-recursive.html" (dict "Section" . "Page" $.Page) }}
+        {{ end }}
+    </li>
+    {{ end }}
+</ul>

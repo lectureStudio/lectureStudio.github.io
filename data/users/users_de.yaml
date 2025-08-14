@@ -1,0 +1,35 @@
+- name: "Prof. Dr-Ing. Andreas Koch"
+  institution: " Technische Universität Darmstadt, Fachbereich Informatik"
+  lectures:
+    - "Architekturen und Entwurf von Rechnersystemen"
+    - "Einführung in den Compilerbau"
+    - "Fortgeschrittener Compilerbau"
+
+- name: "Prof. Dr. Andy Schürr"
+  institution: " Technische Universität Darmstadt, Fachbereich Elektrotechnik und Informationstechnik"
+  lectures:
+    - "Software-Engineering – Einführung"
+    - "Software-Engineering – Wartung und Qualitätssicherung"
+
+- name: "Dr.-Ing. Florian Stock"
+  institution: " Technische Universität Darmstadt, Fachbereich Informatik"
+  lectures:
+    - "Algorithmen für Chip-Entwurfswerkzeuge"
+    - "Praktische FPGA Programmierung in Hochsprachen"
+    - "Allgemeine Informatik I"
+
+- name: "Dr.-Ing. Eric Lenz"
+  institution: " Technische Universität Darmstadt, Fachbereich Elektrotechnik und Informationstechnik"
+  lectures:
+    - "Robuste Regelung"
+    - "Identifikation dynamischer Systeme"
+
+- name: "Prof. Dr. Björn Scheuermann"
+  institution: " Technische Universität Darmstadt, Fachbereich Elektrotechnik und Informationstechnik"
+  lectures:
+    - "Kommunikationsnetze"
+
+- name: "Prof. Dr.-Ing. Klaus Hofmann"
+  institution: " Technische Universität Darmstadt, Fachbereich Elektrotechnik und Informationstechnik"
+  lectures:
+    - "Computer Aided Design for SoCs"

@@ -1,0 +1,106 @@
+hero:
+  moto: "Digitale Vorlesungen leicht gemacht!"
+  text: "Eine kostenlose Software zum Präsentieren von Vorlesungen und Vorträgen im PDF-Format. Sie beinhaltet eine ganze Bandbreite weiterer Funktionalitäten für interaktive Vorlesungen (z.B. Freihandzeichnungen), zum Streamen und Aufzeichnen von Vorlesungen, für interaktive Elemente wie Quizze und vieles mehr."
+  badge: "Neueste Version"
+  trust_indicators:
+    gdpr: "DSGVO-konform"
+    open_source: "Open-Source-Software"
+    community: "Aktive Community"
+
+cta:
+  title: "Benötigen Sie weitere Hilfe?"
+  subtitle: "Wir stehen Ihnen bei Fragen oder Problemen zur Verfügung."
+  contact_us: "Kontaktieren Sie uns"
+
+nav:
+  github: "GitHub"
+  theme:
+    light: "Hell"
+    dark: "Dunkel"
+
+note: "Hinweis"
+
+404_message: "Seite nicht gefunden"
+404_description: "Leider konnten wir die von Ihnen gesuchte Seite nicht finden."
+404_back: "Zurück zur Startseite"
+
+features:
+  title: "All-in-one Plattform"
+  subtitle: "Was unsere Software besonders macht"
+
+download:
+  file_size: "Dateigröße"
+  download_button: "Download"
+  version: "Version"
+  show_more: "Weitere Versionen anzeigen"
+  show_less: "Weniger anzeigen"
+  no_changelog: "Für diese Version ist kein Änderungsprotokoll verfügbar."
+
+users:
+  title: "lectureStudio Benutzer"
+  subtitle: "Werden Sie Teil der Gemeinschaft von Lehrenden, die lectureStudio nutzen"
+
+documentation:
+  contents: "Inhalt"
+
+image_content:
+  presentation:
+    title: "Einführung in die Informatik"
+    subtitle: "Vorlesung 3: Algorithmen & Datenstrukturen"
+    slide_title: "Binäre Suchbäume"
+    bullet_points:
+      point1: "O(log n) Such-, Einfüge-, Löschoperationen"
+      point2: "Ausgewogene Bäume erhalten die Leistung"
+      point3: "Anwendungen in Datenbanken und Dateisystemen"
+  waveform:
+    time_display: "00:01:24 / 00:05:05"
+    time_markers:
+      marker1: "0:00"
+      marker2: "1:00"
+      marker3: "2:00"
+      marker4: "3:00"
+      marker5: "4:00"
+      marker6: "5:00"
+  quiz:
+    title: "Schnellumfrage"
+    question: "Welche Datenstruktur ist für diesen Fall am besten geeignet?"
+    options:
+      option1: "Binärbaum"
+      option2: "Hash-Tabelle"
+      option3: "Verkettete Liste"
+    submit: "Antwort absenden"
+  chat:
+    title: "Live-Chat"
+    online_count: "24 online"
+    messages:
+      user1:
+        name: "Alex"
+        message: "Tolle Erklärung zu BST!"
+      user2:
+        name: "Maria"
+        message: "Können Sie die Zeitkomplexität noch einmal erklären?"
+      user3:
+        name: "John"
+        message: "Wird das aufgezeichnet?"
+    input_placeholder: "Nachricht eingeben..."
+
+tutorials:
+  slides: "Folien"
+
+app_screenshots:
+  lecture_presenter:
+    title: "lecturePresenter"
+    subtitle: "Präsentieren, aufzeichnen und streamen Sie Ihre Vorlesungen"
+    text: "Die intuitive Benutzeroberfläche und leistungsstarke Funktionen machen es einfach, ansprechende Inhalte für Ihre Studierenden zu erstellen. Mit fortschrittlichen Aufnahmefunktionen und nahtloser Streaming-Integration können Sie hochwertige Bildungserlebnisse sowohl persönlich als auch aus der Ferne bereitstellen."
+  lecture_editor:
+    title: "lectureEditor"
+    subtitle: "Nachbearbeitung"
+    text: "Bearbeiten und verbessern Sie Ihre aufgezeichneten Vorlesungen mit leistungsstarken Nachbearbeitungswerkzeugen. Schneiden Sie, fügen Sie Anmerkungen hinzu und verfeinern Sie Ihre Inhalte, um professionelle Bildungsmaterialien zu erstellen."
+  surveys:
+    title: "Umfragen"
+    subtitle: "Zugänglich über Browser"
+    text: "Erstellen Sie interaktive Umfragen, um Ihr Publikum einzubeziehen und wertvolles Feedback in Echtzeit während Ihrer Vorlesungen zu sammeln."
+  streaming:
+    title: "Streaming"
+    subtitle: "Echtzeit-Übertragung"
+    text: "Streamen Sie Ihre Vorlesungen an entfernte Studierende mit hochwertiger Video- und Audioqualität und ermöglichen Echtzeit-Interaktion unabhängig vom physischen Standort."

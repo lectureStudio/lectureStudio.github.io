@@ -1,0 +1,19 @@
+<div x-data="tabs" class="tabs-container my-6">
+    <div class="tabs-nav border-b border-gray-200 dark:border-gray-700">
+        <nav class="flex -mb-px" aria-label="Tabs">
+            <template x-for="(tab, index) in tabs" :key="index">
+                <button 
+                    class="tab-button whitespace-nowrap py-2 px-1 ml-6 first-of-type:ml-4 border-b-2 font-medium"
+                    :class="activeTab === index ? 
+                        'border-blue-500 text-blue-600 dark:text-blue-400 dark:border-blue-400' : 
+                        'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:border-gray-600'"
+                    x-text="tab.name"
+                    @click="activeTab = index">
+                </button>
+            </template>
+        </nav>
+    </div>
+    <div class="tabs-content mt-4">
+        {{ .Inner }}
+    </div>
+</div>

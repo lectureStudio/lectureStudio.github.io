@@ -1,0 +1,30 @@
+- name: Andreas Koch
+  mail: koch@esa.tu-darmstadt.de
+  contributions:
+    - Konzept
+    - Feldtest
+  firm: |
+    Technische Universität Darmstadt
+    Fachbereich Informatik
+  department: Fachgebiet Eingebettete Systeme und ihre Anwendungen
+  url: https://www.esa.informatik.tu-darmstadt.de/de
+
+- name: Andy Schürr
+  mail: andy.schuerr@es.tu-darmstadt.de
+  contributions:
+    - Konzept
+    - Feldtest
+  firm: |
+    Technische Universität Darmstadt
+    Fachbereich Elektrotechnik und Informationstechnik
+  department: Fachgebiet Echtzeitsysteme
+  url: https://www.es.tu-darmstadt.de/es
+
+- name: Alex Andres
+  mail: alexej.andres@es.tu-darmstadt.de
+  contributions:
+    - Entwickler
+  firm: |
+    Technische Universität Darmstadt
+  department: Fachgebiet Echtzeitsysteme
+  url: https://www.es.tu-darmstadt.de/es

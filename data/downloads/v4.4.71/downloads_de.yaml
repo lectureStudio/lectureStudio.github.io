@@ -1,0 +1,51 @@
+changelog: |
+  ### Changelog
+  #### lecturePresenter
+  * Fixed microphone settings (adjustment and recording test)
+  * Fixed recorded slides to PDF export (annotation positions, blending mode and extended/zoomed view)
+  * Fixed scaling of recorded pointer and zoom-rectangle
+  * Simplified slides to PDF export view (less user interaction required)
+  * Option for full screen mode in general settings
+  
+  #### lectureEditor
+  * Simplified recording export options (HTML video player automatically created with the compressed video)
+  * Fixed rendering of text annotations
+  
+  #### lecturePlayer (Web)
+  * Fixed annotation rendering in preview slides
+  * Improved pointer appearance
+  
+  #### All apps
+  * Fixed language setting
+  * Added notification that a restart of the app is required to take effect of the language setting
+  * Added 'Info' tab to about view
+  * Stabilized Linux and macOS versions
+  * Save and re-use the recently used directory when opening/saving files
+  
+  #### WIP
+  - [ ] #21 lectureEditor: Slider positions of the volume change area are not recalculated when deleting / pasting
+  - [ ] #27 lectureEditor: Inconsitencies with multiple deletions
+  - [ ] #43 lecturePresenter: The default directory for the save dialog of PDF is always 'user.home'
+
+version: "4.4.71"
+date: "2021-04-19"
+
+platforms:
+  - name: "Windows"
+    description: "Installer für Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v4.4.71/lectureStudio-4.4.71-windows-x86_64.msi"
+        size: "140.5 MB"
+  - name: "macOS"
+    description: "Installer für macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v4.4.71/lectureStudio-4.4.71-mac-x86_64.pkg"
+        size: "147.2 MB"
+  - name: "Linux"
+    description: "Pakete für Linux-Distributionen"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v4.4.71/lectureStudio-4.4.71-linux-x86_64.zip"
+        size: "159.6 MB"

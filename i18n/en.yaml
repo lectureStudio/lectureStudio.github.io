@@ -1,0 +1,106 @@
+hero:
+  moto: "Digitize your lectures with ease!"
+  text: "A free software tool for presenting PDF-based lectures. It integrates a wide spectrum of interactive features (e.g., annotation of slides by many pen-based tools), streaming and recording of audio and video, classroom response (interactive quizzes and messaging system) by smartphone web-browser, and much more."
+  badge: "Latest Release"
+  trust_indicators:
+    gdpr: "GDPR compliant"
+    open_source: "Open source software"
+    community: "Active community"
+
+cta:
+  title: "Need More Help?"
+  subtitle: "We are ready to assist you with any questions or issues you may have."
+  contact_us: "Contact Us"
+
+nav:
+  github: "GitHub"
+  theme:
+    light: "Light"
+    dark: "Dark"
+
+note: "Note"
+
+404_message: "Page not found"
+404_description: "Sorry, we couldn't find the page you're looking for."
+404_back: "Back to Homepage"
+
+features:
+  title: "All-in-one Platform"
+  subtitle: "What makes our software special"
+
+download:
+  file_size: "File size"
+  download_button: "Download"
+  version: "Version"
+  show_more: "Show More Versions"
+  show_less: "Show Less"
+  no_changelog: "No changelog available for this version."
+
+users:
+  title: "lectureStudio Users"
+  subtitle: "Join the community of educators using lectureStudio"
+
+documentation:
+  contents: "Contents"
+
+image_content:
+  presentation:
+    title: "Introduction to Computer Science"
+    subtitle: "Lecture 3: Algorithms & Data Structures"
+    slide_title: "Binary Search Trees"
+    bullet_points:
+      point1: "O(log n) search, insert, delete operations"
+      point2: "Balanced trees maintain performance"
+      point3: "Applications in databases and file systems"
+  waveform:
+    time_display: "00:01:24 / 00:05:05"
+    time_markers:
+      marker1: "0:00"
+      marker2: "1:00"
+      marker3: "2:00"
+      marker4: "3:00"
+      marker5: "4:00"
+      marker6: "5:00"
+  quiz:
+    title: "Quick Poll"
+    question: "Which data structure is best for this case?"
+    options:
+      option1: "Binary Tree"
+      option2: "Hash Table"
+      option3: "Linked List"
+    submit: "Submit Answer"
+  chat:
+    title: "Live Chat"
+    online_count: "24 online"
+    messages:
+      user1:
+        name: "Alex"
+        message: "Great explanation of BST!"
+      user2:
+        name: "Maria"
+        message: "Can you explain the time complexity again?"
+      user3:
+        name: "John"
+        message: "Is this being recorded?"
+    input_placeholder: "Type a message..."
+
+tutorials:
+  slides: "Slides"
+
+app_screenshots:
+  lecture_presenter:
+    title: "lecturePresenter"
+    subtitle: "Present, record, and stream your lectures"
+    text: "The intuitive interface and powerful features make it easy to create engaging content for your students. With advanced recording capabilities and seamless streaming integration, you can deliver high-quality educational experiences both in-person and remotely."
+  lecture_editor:
+    title: "lectureEditor"
+    subtitle: "Post-Processing"
+    text: "Edit and enhance your recorded lectures with powerful post-production tools. Trim, add annotations, and refine your content to create professional-quality educational materials."
+  surveys:
+    title: "Surveys"
+    subtitle: "Accessible via browsers"
+    text: "Create interactive surveys and polls to engage your audience and gather valuable feedback in real-time during your lectures."
+  streaming:
+    title: "Streaming"
+    subtitle: "Real-time broadcast"
+    text: "Stream your lectures to remote students with high-quality video and audio, enabling real-time interaction regardless of physical location."

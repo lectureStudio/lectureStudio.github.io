@@ -1,0 +1,49 @@
+changelog: |
+  ### Changelog
+  #### lecturePresenter
+  * Fixed camera preview in camera settings.
+  * Fixed recording quiz slides.
+  * Fixed recording of PDF slides.
+  * Fixed saving recording name with combination of whiteboards.
+  * Introduced broadcast profiles in live stream settings.
+  * Minor UI state fixes.
+  
+  #### lectureEditor
+  * Fixed rendering of the main slide view.
+  * Fixed default path when saving the changed recording.
+  * Show document preview in it's final playback state.
+  * Show document preview in it's final playback state in video export
+  
+  #### lectureBroadcaster
+  * Switched to a more efficient and faster Quarkus implementation.
+  
+  #### Web services
+  * Improved security with rolling certificates.
+  * Fixed starting quizzes without to stop the previous one.
+  
+  #### All apps
+  * New version checking that will show a notification if a new version of lectureStudio is available (**to receive notifications please make sure that the corresponding setting is activated in the general settings of the app**).
+  
+
+version: "4.4.170"
+date: "2021-06-07"
+
+platforms:
+  - name: "Windows"
+    description: "Installer für Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v4.4.170/lectureStudio-4.4.170-windows-x86_64.msi"
+        size: "159.4 MB"
+  - name: "macOS"
+    description: "Installer für macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v4.4.170/lectureStudio-4.4.170-mac-x86_64.pkg"
+        size: "164.9 MB"
+  - name: "Linux"
+    description: "Pakete für Linux-Distributionen"
+    packages:
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v4.4.170/lectureStudio-4.4.170-linux-x86_64.zip"
+        size: "183.8 MB"

@@ -1,0 +1,66 @@
+- question: "Ist lectureStudio kostenlos nutzbar?"
+  answer: |
+    Ja, lectureStudio ist eine vollständig kostenlose Open-Source-Software. Sie können sie ohne jegliche Kosten herunterladen und verwenden.
+
+- question: "Welche Betriebssysteme werden unterstützt?"
+  answer: |
+    lectureStudio läuft auf Windows, macOS und Linux.
+
+- question: "Wie kann ich meine Aufzeichnungen mit Studierenden teilen?"
+  answer: |
+    Sie können Ihre Aufzeichnungen als Videodateien (MP4) oder als lectureStudio-Aufnahmedateien (.plr) exportieren. Sie können diese Dateien dann über Ihr Lernmanagementsystem oder einen beliebigen Dateifreigabedienst mit Ihren Studenten teilen.
+
+- question: "Gibt es eine mobile Version von lectureStudio?"
+  answer: |
+    Derzeit ist lectureStudio nur für Desktop-Betriebssysteme verfügbar. Es gibt noch keine mobile Version.
+
+- question: "Ist lectureStudio Open Source und erweiterbar?"
+  answer: |
+    lectureStudio wird momentan an der TU Darmstadt vom Fachbereich Elektrotechnik und Informationstechnik und dem Fachbereich Informatik, Eingebettete Systeme und ihre Anwendungen entwickelt. Das Projekt ist auf [GitHub](https://github.com/lectureStudio) unter der [GPLv3-Lizenz](https://www.gnu.org/licenses/quick-guide-gplv3.html) veröffentlicht. Dort können Sie auch gerne Feature-Anfragen diskutieren oder Funktionen selber implementieren. Alle Erweiterungen müssen unter der gegebenen Lizenz berücksichtigt werden.
+
+- question: "Wie kann ich zum Projekt beitragen?"
+  answer: |
+    lectureStudio ist ein Open-Source-Projekt, und Beiträge sind willkommen! Sie können beitragen, indem Sie Fehler melden, Funktionen vorschlagen oder Code-Änderungen einreichen. Besuchen Sie das [GitHub-Repository](https://github.com/lectureStudio/lectureStudio), um zu beginnen.
+
+- question: "Kann ich ein Grafiktablett mit lectureStudio verwenden?"
+  answer: |
+    Ja, lectureStudio funktioniert gut mit Grafiktabletts. Es unterstützt Druckempfindlichkeit und Handballenerkennung für ein besseres Schreiberlebnis.
+
+- question: "Welche Hardware wird für den eTeaching-Arbeits-Platz empfohlen?"
+  answer: |
+    Falls Sie in Ihrer Präsentation zeichnen möchten und einen Rechner oder Laptop ohne Stifteingabe haben, dann ist ein Grafiktablett von der Marke HUION als eine kostengünstigere Variante empfehlenswert. Zum Beispiel das Modell HUION KAMVAS 20. Das Grafiktablett schließen Sie über USB an Ihren Rechner an. Alternativ dazu gibt es Convertible Laptops verschiedener Marken mit integrierter Stifteingabe.
+
+    Für das Mikrofon ist das Yeti Pro von Blue Microphones zu empfehlen.
+
+- question: "Wie kann ich meine Folien im PowerPoint- oder LibreOffice Impress-Format mit lectureStudio präsentieren?"
+  answer: |
+    Präsentationsfolien müssen zunächst in eine PDF-Datei konvertiert werden. Um Animationen auf Einzelfolien aufzuteilen werden zwei Alternativen genannt, mit welchen dies durchgeführt werden kann.
+
+    **PowerPoint:** PPspliT ist ein Werkzeug, das beim Exportieren Animationen auf mehrere Seiten verteilt. [Anleitung]
+
+    Falls Sie Probleme mit Foliennummern von aufgeteilten Animationen haben, folgen Sie bitte diesen Anweisungen.
+
+    **LibreOffice:** ExpandAnimations ist eine Erweiterung von LibreOffice/OpenOffice.org, mit der Animationen vor dem Export in PDF auf mehrere Seiten verteilt werden können. [Anleitung]
+
+- question: "Kann ich lectureStudio mit einem iPad nutzen?"
+  answer: |
+    Es gibt keine native Unterstützung für iPads, da lectureStudio mit Java entwickelt wurde und es keine offizielle Java-Laufzeitumgebung (JRE) für iPad gibt. Eine native Unterstützung für iPad ist bereits in Planung.
+
+    **Lösung:**
+    Mit Duet Display können Sie Ihr iPad als externen Digitizer für lecturePresenter auf Ihrem PC oder Mac nutzen. Das setzt voraus, dass Sie einen Windows oder macOS fähigen Rechner haben.
+
+- question: "Warum kann lecturePresenter beim Starten von Webdiensten keine Verbindung zum Server herstellen?"
+  answer: |
+    Wenn Sie beim Starten eines Webdienstes wie einem Quiz oder beim Aktivieren von Nachrichten eine Fehlermeldung erhalten, ist wahrscheinlich eine lokale Firewall mit anwendungsspezifischen Regeln eingerichtet. Sie können den Fehler auch nach dem Upgrade von lectureStudio erhalten. Einige Firewalls überprüfen den digitalen Fingerabdruck der ausführbaren Datei. Wenn sich die ausführbare Datei mit dem Upgrade ändert, beginnt die Firewall die ausführbare Datei zu blockieren, obwohl Sie möglicherweise bereits eine Ausnahmeregel für lecturePresenter hinzugefügt haben.
+
+    Bei Nutzung der integrierten Windows-Firewall gehen Sie bitte zu Einstellungen > Update und Sicherheit > Windows-Sicherheit > Firewall & Netzwerkschutz und dann Zugriff von App durch Firewall zulassen. Dort haben Sie zwei Möglichkeiten: 1. Eine Ausnahme für lecturePresenter.exe manuell hinzufügen oder 2. Sie löschen vorhandene Ausnahmen für lecturePresenter.exe und starten lecturePresenter neu. Windows fordert Sie auf, den Netzwerkzugriff zuzulassen, und wenn Sie dies akzeptieren, werden die Firewall-Regeln für Sie erstellt.
+
+- question: "Wie kann ich das Problem mit asynchronen Folien und Tonspur bei der Zerlegung von Aufzeichnungen lösen?"
+  answer: |
+    Bei der Nachbearbeitung von Aufzeichnungen kann es vorkommen, dass die Aufzeichnung zu lange geworden ist und in Teile zerlegt werden muss. Dabei tritt häufig das Problem auf, dass an der inhaltlich passenden Stelle die Tonspur und Folienwechsel asynchron sind – Sie beginnen bereits, die nächste Folie zu erläutern, während noch kurz die aktuelle Folie sichtbar ist.
+
+    **Bessere Lösung:**
+    Verschieben Sie einfach den Zeitpunkt, an dem der Folienwechsel stattfindet, auf den Moment, an dem Sie inhaltlich mit der nächsten Folie beginnen. So bleibt die Tonspur unverändert und Bild und Ton sind wieder synchron. Praktisch bedeutet das: Setzen Sie die Schnittmarke an die gewünschte Stelle und ziehen Sie das Ereignis für den Folienwechsel etwas nach vorne (oder hinten), sodass die Folie genau dann wechselt, wenn Ihr Vortrag das Thema wechselt.
+
+    **Alternative Lösung:**
+    Dieses Problem lässt sich auch mit der Funktion zum Austauschen von Folien beseitigen. Ersetzen Sie die Folie zum alten Thema durch eine Kopie der Folie zum neuen Thema. Sie haben dann zwar noch einen überflüssigen Folienwechsel in der Aufzeichnung, aber dieser stört höchstens in der Folienvorschau und nicht im eigentlichen Vortrag.

@@ -1,0 +1,36 @@
+<section class="py-16">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!-- Get the user data for the current language -->
+        {{ $lang := $.Site.Language.Lang }}
+        {{ $usersKey := printf "users_%s" $lang }}
+        {{ $users := index .Site.Data.users $usersKey }}
+
+        <!-- Section Header -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">{{ i18n "users.title" }}</h2>
+            <p class="mx-auto max-w-2xl text-lg text-gray-600 dark:text-gray-400">
+                {{ i18n "users.subtitle" }}
+            </p>
+        </div>
+
+        <!-- Users Grid -->
+        <div class="flex flex-wrap justify-center gap-8 mt-10">
+            {{ range $users }}
+            <div class="w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(32%-0.5rem)] flex flex-col p-6 bg-white dark:bg-gray-900 text-gray-950 dark:text-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="mb-4">
+                    <h3 class="text-xl font-semibold">{{ .name }}</h3>
+                </div>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4">{{ .institution }}</p>
+                <div class="text-gray-700 dark:text-gray-300">
+                    <h4 class="font-medium mb-2">Lectures:</h4>
+                    <ul class="list-disc pl-5">
+                        {{ range .lectures }}
+                        <li>{{ . }}</li>
+                        {{ end }}
+                    </ul>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

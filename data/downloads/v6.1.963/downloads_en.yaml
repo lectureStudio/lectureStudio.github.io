@@ -1,0 +1,46 @@
+changelog: |
+  ### Changelog
+  
+  #### lecturePresenter
+  * Fixed edited chat message to slide conversion.
+  * Fixed opening whiteboard via toolbar https://github.com/lectureStudio/lectureStudio/issues/894.
+  * Fixed slide overlay detection for some slide sets https://github.com/lectureStudio/lectureStudio/issues/889.
+  * Fixed (disable) focus for tabbed panes.
+  * Show error notification if a slide could not be recorded https://github.com/lectureStudio/lectureStudio/issues/912.
+  * Fixed mouse wheel scrolling in the slides view https://github.com/lectureStudio/lectureStudio/issues/916.
+  * Improved whitespaces in MessageDocument https://github.com/lectureStudio/lectureStudio/issues/903.
+  * Expand slide notes tab when notes are available https://github.com/lectureStudio/lectureStudio/issues/919.
+  * Fixed recent documents list size in Linux https://github.com/lectureStudio/lectureStudio/issues/915.
+  * Fixed text tool and box size.
+  * Reduced text-box fonts to only embedded ones.
+  
+  #### lectureEditor
+  * Fixed event table flickering https://github.com/lectureStudio/lectureStudio/issues/921.
+  * Fixed text font issues with custom text on slides https://github.com/lectureStudio/lectureStudio/issues/910.
+  * Fixed audio render progress precision https://github.com/lectureStudio/lectureStudio/issues/908.
+  
+  #### Project
+  * Provide DEB and RPM packages for Linux distributions.
+
+version: "6.1.963"
+date: "2024-06-04"
+
+platforms:
+  - name: "Windows"
+    description: "Installer for Windows 10/11"
+    packages:
+      - type: "MSI"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.963/lectureStudio-6.1.963-windows-x86_64.msi"
+        size: "183.2 MB"
+  - name: "Linux"
+    description: "Packages for Linux distributions"
+    packages:
+      - type: "DEB"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.963/lecturestudio_6.1.963-linux_amd64.deb"
+        size: "161.8 MB"
+      - type: "RPM"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.963/lecturestudio-6.1.963-linux.x86_64.rpm"
+        size: "180.1 MB"
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.1.963/lectureStudio-6.1.963-linux-x86_64.zip"
+        size: "180.5 MB"

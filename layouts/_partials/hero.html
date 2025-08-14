@@ -1,0 +1,445 @@
+<div class="bg-white dark:bg-gray-950">
+    <div class="relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 dark:from-gray-800/20">
+        <div class="mx-auto max-w-7xl pb-24 pt-10 sm:pb-32 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 lg:py-40">
+            <!-- Heading Content -->
+            <div class="flex-1 text-center lg:text-left px-4">
+                <!-- Heading -->
+                <h1 class="mb-4 text-5xl font-extrabold tracking-tight md:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-sky-800 dark:from-white dark:to-sky-300">
+                    {{ .Site.Title }}
+                </h1>
+
+                <!-- Subheading -->
+                <h2 class="mb-6 text-2xl font-light text-slate-700 dark:text-slate-300 md:text-3xl">
+                    {{ i18n "hero.moto" }}
+                </h2>
+
+                <!-- Badge -->
+                <a href="{{ "/download" | relLangURL }}" class="inline-flex justify-between items-center mb-6 px-3 py-1
+                text-sm font-medium text-sky-700 bg-sky-200/30 rounded-full dark:bg-sky-900/60 dark:text-sky-300
+                hover:bg-sky-200/80 dark:hover:bg-sky-800/60 transition-colors duration-200">
+                <span class="flex items-center">
+                        <svg class="w-4 h-4 mr-1.5">
+                            <use href="#lightning-bolt"/>
+                        </svg>
+                        {{ i18n "hero.badge" }}
+                        {{ $latestVersion := partial "latest-version.html" . }}
+                        <span class="ml-1.5">{{ $latestVersion }}</span>
+                        <svg class="ml-1.5 w-3 h-3">
+                            <use href="#chevron-right"/>
+                        </svg>
+                    </span>
+                </a>
+
+                <!-- Description -->
+                <p class="mb-8 max-w-2xl mx-auto lg:mx-0 text-lg text-slate-600 dark:text-slate-400 md:text-xl">
+                    {{ i18n "hero.text" }}
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="mt-1 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-wrap justify-center lg:justify-start gap-6">
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-blue-600">
+                            <use href="#shield-check"/>
+                        </svg>
+                        <span class="ml-2 text-sm text-slate-600 dark:text-slate-400">{{ i18n "hero.trust_indicators.gdpr" }}</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-5 h-5 text-green-500">
+                            <use href="#badge-check"/>
+                        </svg>
+                        <span class="ml-2 text-sm text-slate-600 dark:text-slate-400">{{ i18n "hero.trust_indicators.open_source" }}</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Image Content Container -->
+            <div class="mt-20 sm:mt-24 md:mx-auto md:max-w-2xl lg:mx-0 lg:mt-0 lg:w-screen">
+                <div class="absolute inset-y-0 right-1/2 -z-10 -mr-10 w-[200%] skew-x-[-30deg] bg-white dark:bg-gray-900 shadow-xl shadow-blue-600/10 dark:shadow-blue-900/20 ring-1 ring-indigo-50 dark:ring-gray-800 md:-mr-20 lg:-mr-36" aria-hidden="true"></div>
+                <div class="shadow-lg md:rounded-3xl">
+                    <div class="[clip-path:inset(0)] md:[clip-path:inset(0_round_theme(borderRadius.3xl))]">
+                        <div class="absolute -inset-y-px left-1/2 -z-10 ml-10 w-[200%] skew-x-[-30deg] bg-blue-100 dark:bg-gray-700 opacity-20 ring-1 ring-inset ring-white dark:ring-gray-800 md:ml-20 lg:ml-36" aria-hidden="true"></div>
+                        <div class="relative p-8">
+                            <div class="mx-auto max-w-2xl md:mx-0 md:max-w-none">
+                                <!-- Image Content -->
+                                <div class="flex-1 w-full">
+                                    <div class="relative">
+                                        <!-- Interactive Presentation & Editing Visual -->
+                                        <div class="relative">
+                                            <div class="relative z-10 w-full h-64 sm:h-72 md:h-[400px] rounded-xl shadow-sm border border-white/20 dark:border-slate-800/50 transition-all duration-300 hover:shadow-sky-500/20 dark:hover:shadow-sky-400/10 bg-white dark:bg-slate-800 overflow-hidden">
+                                                <!-- Presentation Canvas Background -->
+                                                <div class="absolute inset-0 bg-gradient-to-br from-white to-slate-100 dark:from-slate-800 dark:to-slate-900">
+                                                    <!-- Grid Pattern -->
+                                                    <div class="absolute inset-0 opacity-10 dark:opacity-20" style="background-image: radial-gradient(circle, rgba(0,0,0,0.1) 1px, transparent 1px); background-size: 20px 20px;"></div>
+                                                </div>
+
+                                                <!-- University Presentation Slide -->
+                                                <div class="absolute top-1/4 sm:top-1/3 left-1/2 mt-2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 sm:w-4/5 md:w-3/4 bg-white dark:bg-slate-800 rounded-md shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden">
+                                                    <!-- Slide Header -->
+                                                    <div class="bg-blue-600 dark:bg-blue-800 px-4 py-2 text-white">
+                                                        <div class="text-sm font-semibold">{{ i18n "image_content.presentation.title" }}</div>
+                                                        <div class="text-xs opacity-80">{{ i18n "image_content.presentation.subtitle" }}</div>
+                                                    </div>
+
+                                                    <!-- Slide Content -->
+                                                    <div class="p-3">
+                                                        <!-- Slide Title -->
+                                                        <div class="text-sm font-bold text-slate-800 dark:text-slate-200 mb-2">
+                                                            {{ i18n "image_content.presentation.slide_title" }}
+                                                        </div>
+
+                                                        <!-- Bullet Points -->
+                                                        <ul class="text-xs space-y-1 text-slate-700 dark:text-slate-300 ml-4 list-disc">
+                                                            <li>{{ i18n "image_content.presentation.bullet_points.point1" }}</li>
+                                                            <li>{{ i18n "image_content.presentation.bullet_points.point2" }}</li>
+                                                            <li>{{ i18n "image_content.presentation.bullet_points.point3" }}</li>
+                                                        </ul>
+
+                                                        <!-- Simple Diagram -->
+                                                        <div class="mt-2 flex justify-center">
+                                                            <svg class="w-24 h-16" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                                                                <!-- Tree Nodes -->
+                                                                <circle cx="50" cy="10" r="6" class="fill-blue-500 dark:fill-blue-400"/>
+                                                                <circle cx="30" cy="30" r="6" class="fill-green-500 dark:fill-green-400"/>
+                                                                <circle cx="70" cy="30" r="6" class="fill-purple-500 dark:fill-purple-400"/>
+                                                                <circle cx="20" cy="50" r="6" class="fill-yellow-500 dark:fill-yellow-400"/>
+                                                                <circle cx="40" cy="50" r="6" class="fill-red-500 dark:fill-red-400"/>
+
+                                                                <!-- Tree Connections -->
+                                                                <line x1="50" y1="16" x2="30" y2="24" stroke="#64748b" stroke-width="1.5"/>
+                                                                <line x1="50" y1="16" x2="70" y2="24" stroke="#64748b" stroke-width="1.5"/>
+                                                                <line x1="30" y1="36" x2="20" y2="44" stroke="#64748b" stroke-width="1.5"/>
+                                                                <line x1="30" y1="36" x2="40" y2="44" stroke="#64748b" stroke-width="1.5"/>
+
+                                                                <!-- Node Values -->
+                                                                <text x="50" y="13" text-anchor="middle" class="fill-white dark:fill-white text-[8px] font-bold">
+                                                                    8
+                                                                </text>
+                                                                <text x="30" y="33" text-anchor="middle" class="fill-white dark:fill-white text-[8px] font-bold">
+                                                                    3
+                                                                </text>
+                                                                <text x="70" y="33" text-anchor="middle" class="fill-white dark:fill-white text-[8px] font-bold">
+                                                                    10
+                                                                </text>
+                                                                <text x="20" y="53" text-anchor="middle" class="fill-white dark:fill-white text-[8px] font-bold">
+                                                                    1
+                                                                </text>
+                                                                <text x="40" y="53" text-anchor="middle" class="fill-white dark:fill-white text-[8px] font-bold">
+                                                                    6
+                                                                </text>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Presentation Tools -->
+                                                <div class="absolute top-3 sm:top-4 md:top-6 right-2 sm:right-4 md:right-6 flex flex-col space-y-2">
+                                                    <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-700 shadow-md flex items-center justify-center hover:bg-sky-100 dark:hover:bg-sky-800 cursor-pointer transition-colors duration-200">
+                                                        <svg class="w-4 h-4 text-sky-500">
+                                                            <use href="#pencil"/>
+                                                        </svg>
+                                                    </div>
+                                                    <!-- Pointer Button -->
+                                                    <div class="w-8 h-8 rounded-full bg-white dark:bg-slate-700 shadow-md flex items-center justify-center hover:bg-amber-100 dark:hover:bg-amber-800 cursor-pointer transition-colors duration-200">
+                                                        <svg class="w-4 h-4 text-amber-500">
+                                                            <use href="#cursor"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Digitizer Strokes -->
+                                                <div class="absolute top-[26%] left-[11%] w-1/2 h-1/6">
+                                                    <svg viewBox="0 0 350 100" class="w-full h-full">
+                                                        <path d="M20,50 C40,30 60,70 80,50 C100,30 120,70 140,50 C160,30 180,70 200,50 C220,30 240,70 260,50 C280,30 300,70 320,50"
+                                                              fill="none"
+                                                              stroke="#3b82f6"
+                                                              stroke-width="3"
+                                                              stroke-linecap="round"
+                                                              class="animate-draw">
+                                                            <animate attributeName="stroke-dashoffset" from="800" to="0" dur="4s" repeatCount="indefinite"/>
+                                                        </path>
+                                                    </svg>
+                                                </div>
+
+                                                <!-- Waveform Editor -->
+                                                <div class="absolute bottom-0 left-0 right-0 h-16 sm:h-20 bg-slate-100/90 dark:bg-slate-900/90 border-t border-slate-200 dark:border-slate-700 overflow-hidden">
+                                                    <!-- Timeline Header -->
+                                                    <div class="flex justify-between items-center px-3 py-1 border-b border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80">
+                                                        <div class="flex items-center space-x-2">
+
+                                                        </div>
+                                                        <div class="flex items-center space-x-1">
+                                                            <div class="text-[8px] font-medium text-slate-500 dark:text-slate-400">
+                                                                {{ i18n "image_content.waveform.time_display" }}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Waveform Area -->
+                                                    <div class="relative h-14 px-3 flex items-center">
+                                                        <!-- Time Markers -->
+                                                        <div class="absolute top-0 left-0 right-0 flex justify-between px-3 text-[6px] text-slate-400 dark:text-slate-500">
+                                                            <span>{{ i18n "image_content.waveform.time_markers.marker1" }}</span>
+                                                            <span>{{ i18n "image_content.waveform.time_markers.marker2" }}</span>
+                                                            <span>{{ i18n "image_content.waveform.time_markers.marker3" }}</span>
+                                                            <span>{{ i18n "image_content.waveform.time_markers.marker4" }}</span>
+                                                            <span>{{ i18n "image_content.waveform.time_markers.marker5" }}</span>
+                                                            <span>{{ i18n "image_content.waveform.time_markers.marker6" }}</span>
+                                                        </div>
+
+                                                        <!-- Waveform Bars -->
+                                                        <div class="relative w-full h-10 flex items-center justify-between space-x-px">
+                                                            <!-- Selection Area (highlighted segment) -->
+                                                            <div class="absolute top-0 left-[57%] h-full w-[10%] bg-blue-200/80 dark:bg-blue-800/80 border-l border-r border-blue-400 dark:border-blue-600 pointer-events-none"></div>
+
+                                                            <!-- Center line for waveform -->
+                                                            <div class="absolute left-0 right-0 h-px bg-slate-300 dark:bg-slate-600"></div>
+
+                                                            <!-- Waveform Bars - Full width representation of human speech -->
+                                                            <!-- Introduction/Silence -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 8%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 12%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 6%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 10%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 14%"></div>
+
+                                                            <!-- First sentence - greeting -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 30%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 45%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 60%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 75%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 85%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 95%"></div> <!-- Emphasis -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 80%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 70%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 55%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 40%"></div>
+
+                                                            <!-- Brief pause -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 15%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 10%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 8%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 5%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 7%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 12%"></div>
+
+                                                            <!-- Second phrase - question with rising intonation -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 35%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 50%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 65%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 80%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 90%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 75%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 85%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 95%"></div> <!-- Question peak -->
+
+                                                            <!-- Short pause -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 20%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 15%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 10%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 8%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 12%"></div>
+
+                                                            <!-- Third phrase - explanation with plosives -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 40%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 60%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 52%"></div> <!-- Plosive sound (p, b, t) -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 70%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 55%"></div>
+
+                                                            <!-- Mid-phrase pause -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 15%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 10%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 8%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 12%"></div>
+
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 75%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 90%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 65%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 50%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 95%"></div> <!-- Emphasis -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 75%"></div>
+
+                                                            <!-- Breath/pause -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 15%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 10%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 8%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 6%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 5%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 7%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 12%"></div>
+
+                                                            <!-- Fourth phrase - detailed explanation -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 45%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 60%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 75%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 45%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 70%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 55%"></div>
+
+                                                            <!-- Mid-explanation pause -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 18%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 12%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 8%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 10%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 15%"></div>
+
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 65%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 80%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 90%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 75%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 85%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 95%"></div> <!-- Emphasis -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 80%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 70%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 60%"></div>
+
+                                                            <!-- Short pause -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 20%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 15%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 10%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 7%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 5%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 12%"></div>
+
+                                                            <!-- Fifth phrase - conclusion -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 50%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 65%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 80%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 90%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 75%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 85%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 95%"></div> <!-- Final emphasis -->
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 80%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 65%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 50%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 35%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 20%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 10%"></div>
+                                                            <div class="w-0.5 bg-sky-500 dark:bg-sky-400 rounded opacity-80" style="height: 5%"></div>
+                                                        </div>
+
+                                                        <!-- Markers -->
+                                                        <div class="absolute top-0 left-[35%] w-1 h-2 bg-yellow-500 rounded"></div>
+                                                        <div class="absolute top-0 left-[45%] w-1 h-2 bg-green-500 rounded"></div>
+                                                        <div class="absolute top-0 left-[65%] w-1 h-2 bg-purple-500 rounded"></div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Quiz Element -->
+                                                <div class="absolute left-2 sm:left-4 md:left-6 top-[58%] sm:top-1/2 w-28 sm:w-32 md:w-36 bg-white/90 dark:bg-slate-800/90 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden transform -rotate-1 sm:-rotate-2">
+                                                    <div class="bg-purple-600 dark:bg-purple-700 px-3 py-1.5">
+                                                        <div class="text-xs font-semibold text-white">
+                                                            {{ i18n "image_content.quiz.title" }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="p-2">
+                                                        <div class="text-xs font-medium text-slate-800 dark:text-slate-200 mb-2">
+                                                            {{ i18n "image_content.quiz.question" }}
+                                                        </div>
+                                                        <!-- Options -->
+                                                        <div class="space-y-1.5">
+                                                            <div class="flex items-center">
+                                                                <div class="w-3 h-3 rounded-full border border-purple-500 mr-1.5 flex-shrink-0"></div>
+                                                                <div class="text-[10px] text-slate-700 dark:text-slate-300">
+                                                                    {{ i18n "image_content.quiz.options.option1" }}
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                                <div class="w-3 h-3 rounded-full border border-purple-500 bg-purple-500 mr-1.5 flex-shrink-0"></div>
+                                                                <div class="text-[10px] text-slate-700 dark:text-slate-300">
+                                                                    {{ i18n "image_content.quiz.options.option2" }}
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                                <div class="w-3 h-3 rounded-full border border-purple-500 mr-1.5 flex-shrink-0"></div>
+                                                                <div class="text-[10px] text-slate-700 dark:text-slate-300">
+                                                                    {{ i18n "image_content.quiz.options.option3" }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- Submit Button -->
+                                                        <button class="mt-2 w-full py-1 bg-purple-100 dark:bg-purple-900/30 text-[10px] text-purple-700 dark:text-purple-300 rounded font-medium">
+                                                            {{ i18n "image_content.quiz.submit" }}
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Chat Element -->
+                                                <div class="absolute right-2 sm:right-4 md:right-6 bottom-4 sm:bottom-8 md:bottom-16 mb-4 w-32 sm:w-36 md:w-40 bg-white/90 dark:bg-slate-800/90 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden">
+                                                    <div class="bg-sky-600 dark:bg-sky-700 px-3 py-1.5 flex justify-between items-center">
+                                                        <div class="text-xs font-semibold text-white">
+                                                            {{ i18n "image_content.chat.title" }}
+                                                        </div>
+                                                        <div class="text-[10px] text-sky-200">
+                                                            {{ i18n "image_content.chat.online_count" }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="h-24 sm:h-28 md:h-32 overflow-y-auto p-2 space-y-2">
+                                                        <!-- Chat Messages -->
+                                                        <div class="flex items-start space-x-1">
+                                                            <div class="w-4 h-4 rounded-full bg-green-500 flex-shrink-0 mt-0.5"></div>
+                                                            <div>
+                                                                <div class="text-[10px] font-medium text-slate-800 dark:text-slate-200">
+                                                                    {{ i18n "image_content.chat.messages.user1.name" }}
+                                                                </div>
+                                                                <div class="text-[9px] text-slate-600 dark:text-slate-400">
+                                                                    {{ i18n "image_content.chat.messages.user1.message" }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex items-start space-x-1">
+                                                            <div class="w-4 h-4 rounded-full bg-blue-500 flex-shrink-0 mt-0.5"></div>
+                                                            <div>
+                                                                <div class="text-[10px] font-medium text-slate-800 dark:text-slate-200">
+                                                                    {{ i18n "image_content.chat.messages.user2.name" }}
+                                                                </div>
+                                                                <div class="text-[9px] text-slate-600 dark:text-slate-400">
+                                                                    {{ i18n "image_content.chat.messages.user2.message" }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex items-start space-x-1">
+                                                            <div class="w-4 h-4 rounded-full bg-purple-500 flex-shrink-0 mt-0.5"></div>
+                                                            <div>
+                                                                <div class="text-[10px] font-medium text-slate-800 dark:text-slate-200">
+                                                                    {{ i18n "image_content.chat.messages.user3.name" }}
+                                                                </div>
+                                                                <div class="text-[9px] text-slate-600 dark:text-slate-400">
+                                                                    {{ i18n "image_content.chat.messages.user3.message" }}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Chat Input -->
+                                                    <div class="p-2 border-t border-slate-200 dark:border-slate-700">
+                                                        <div class="flex">
+                                                            <input type="text"
+                                                                   class="w-full text-[10px] px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-l border-0 focus:ring-0 text-slate-800 dark:text-slate-200"
+                                                                   placeholder="{{ i18n "image_content.chat.input_placeholder" }}">
+                                                            <button class="bg-sky-500 text-white px-2 rounded-r">
+                                                                <svg class="w-3 h-3 transform rotate-45 -mt-px">
+                                                                    <use href="#paper-airplane"/>
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pointer-events-none absolute inset-0 ring-1 ring-inset ring-black/10 dark:ring-white/10 md:rounded-3xl" aria-hidden="true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute inset-x-0 bottom-0 -z-10 h-24 bg-gradient-to-t from-white dark:from-gray-900 sm:h-32"></div>
+    </div>
+</div>

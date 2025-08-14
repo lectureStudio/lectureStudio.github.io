@@ -1,0 +1,20 @@
+<footer class="bg-white dark:bg-gray-900">
+    <div class="max-w-md px-4 py-8 mx-auto overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+        <nav class="flex flex-wrap justify-center -mx-5 -my-2 text-gray-600 dark:text-gray-400" aria-label="Footer">
+            {{ range site.Menus.footer }}
+            <div class="px-5 py-2">
+                <a href="{{ .PageRef | absLangURL }}" target="_blank"
+                   class="text-base hover:text-gray-900 dark:hover:text-white">
+                    {{ .Name }}
+                </a>
+            </div>
+            {{ end }}
+        </nav>
+        <hr class="my-6 sm:mx-auto border-gray-200 dark:border-gray-800 lg:my-8" />
+        <p class="mt-8 text-base text-center text-gray-500 dark:text-gray-400">
+            &copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.
+        </p>
+    </div>
+</footer>
+
+{{ partial "js.html" . }}

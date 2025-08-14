@@ -1,0 +1,6 @@
+<aside class="docs-sidebar sticky top-24 overflow-y-auto pr-4">
+    <nav class="space-y-2">
+        {{ $section := site.GetPage "section" "documentation" }}
+        {{ partial "docs/sidebar-recursive.html" (dict "Section" $section "Page" .Page) }}
+    </nav>
+</aside>

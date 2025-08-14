@@ -1,0 +1,66 @@
+- question: "Is lectureStudio free to use?"
+  answer: |
+    Yes, lectureStudio is completely free and open-source software. You can download and use it without any cost.
+
+- question: "Which operating systems are supported?"
+  answer: |
+    lectureStudio runs on Windows, macOS, and Linux.
+
+- question: "How can I share my recordings with students?"
+  answer: |
+    You can export your recordings as video files (MP4) or as lectureStudio recording files (.plr). You can then share these files with your students through your learning management system or any file-sharing service.
+
+- question: "Is there a mobile version of lectureStudio?"
+  answer: |
+    Currently, lectureStudio is only available for desktop operating systems. There is no mobile version available yet.
+
+- question: "Is lectureStudio open source and extensible?"
+  answer: |
+    lectureStudio is currently being developed internally at the TU Darmstadt by the Department of Electrical Engineering and Information Technology and the Department of Computer Science, Embedded Systems and Applications Group. The project is released on [GitHub](https://github.com/lectureStudio) under the [GPLv3 license](https://www.gnu.org/licenses/quick-guide-gplv3.en.html). There you can discuss feature requests or implement features yourself. All extensions must be taken into account under the given license.
+
+- question: "How can I contribute to the project?"
+  answer: |
+    lectureStudio is an open-source project, and contributions are welcome! You can contribute by reporting bugs, suggesting features, or submitting code changes. Visit the [GitHub repository](https://github.com/lectureStudio/lectureStudio) to get started.
+
+- question: "Can I use a graphics tablet with lectureStudio?"
+  answer: |
+    Yes, lectureStudio works well with graphics tablets. It supports pressure sensitivity and palm rejection for a better writing experience.
+
+- question: "Which hardware is recommended for the eTeaching workplace?"
+  answer: |
+    If you want to draw in your presentation and have a computer or laptop without pen input, then a graphics tablet from the HUION brand is recommended as a more cost-effective variant. For example the HUION KAMVAS 20 model. You can connect the graphics tablet to your computer via USB. Alternatively, there are convertible laptops of various brands with integrated pen input.
+
+    For the microphone, the Yeti Pro from Blue Microphones is recommended.
+
+- question: "How can I present my slides in PowerPoint or LibreOffice Impress format with lectureStudio?"
+  answer: |
+    Presentation slides must first be converted into a PDF file. In order to divide animations on individual slides, two alternatives are mentioned with which this can be carried out.
+
+    **PowerPoint:** PPspliT is a tool that splits animations into multiple slides. [Instructions]
+
+    If you have problems with slide numbers of splitted animations, please follow these instructions.
+
+    **LibreOffice:** ExpandAnimations is a LibreOffice/OpenOffice.org extension to expand animations before exporting to PDF. [Instructions]
+
+- question: "Can I use lectureStudio with an iPad?"
+  answer: |
+    There is no native support for iPads as lectureStudio was developed with Java and there is no official Java Runtime Environment (JRE) for iPad. Native support for iPad is already being planned.
+
+    **Solution:**
+    With [Duet Display](https://duetdisplay.com) you can use your iPad as an external digitizer for lecturePresenter on your PC or Mac. This assumes that you have a Windows or macOS capable computer.
+
+- question: "Why is lecturePresenter not able to connect to the server, when starting web services?"
+  answer: |
+    If you are getting an error by starting a web service like a quiz or enable messages, it is likely that there is a local firewall set up with per-application rules. You may also start getting the error after upgrading lectureStudio. Some firewalls check executable file fingerprint. As the executable file changes with upgrade, the firewall starts blocking the executable, although you may have added exception rule for lecturePresenter already.
+
+    For built-in Windows firewall, go to Control Panel > System and Security > Windows Defender Firewall > Allow an app or feature through Windows Defender Firewall. There you have two options: 1. Add an exception for lecturePresenter.exe manually or 2. Delete existing exceptions for lecturePresenter.exe and restart lecturePresenter. Windows will ask you to allow network access and if you accept, it will create the firewall rules for you.
+
+- question: "How can I solve the problem with asynchronous slides and audio track when splitting recordings?"
+  answer: |
+    When post-processing recordings, you might encounter a situation where the recording has become too long and needs to be split into parts. A common problem is that at the content-appropriate splitting point, the audio track and slide transitions are "asynchronous" — you've already started explaining the next slide while the current slide is still briefly visible.
+
+    **Better solution:**
+    Simply move the time at which the slide change happens to the moment you actually start talking about the next slide. This keeps the audio track untouched and re-synchronizes what is heard with what is seen. In practice, place your split marker where you want to cut and then move the slide transition event slightly earlier (or later) so that the slide switches right when your narration changes topic.
+
+    **Alternative solution:**
+    This problem can also be solved with the slide replacement function. Replace the slide from the old topic with a copy of the slide for the new topic. You'll still have an unnecessary slide transition in the recording, but this only affects the slide preview and not the actual presentation.

@@ -1,0 +1,3 @@
+<div class="tab-content" data-tab-name="{{ .Get 0 }}"{{ with .Get 1 }} data-tab-os="{{ . }}"{{ end }}>
+    {{ .Inner | markdownify }}
+</div>

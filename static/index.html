@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Redirecting...</title>
+    <meta name="robots" content="noindex">
+    <meta charset="utf-8">
+    <script>
+        // Get the user's browser language.
+        const userLang = navigator.language;
+
+        // Determine which language to redirect to.
+        let redirectPath = '/en/';
+
+        // If the language starts with 'de', redirect to the German version.
+        if (userLang.toLowerCase().startsWith('de')) {
+            redirectPath = '/de/';
+        }
+
+        // Get the base URL from the current location.
+        const baseUrl = window.location.protocol + '//' + window.location.host;
+
+        // Redirect to the appropriate language version.
+        window.location.replace(baseUrl + redirectPath);
+    </script>
+
+    <!-- Fallback meta-refresh redirect to English if JavaScript is disabled -->
+    <meta http-equiv="refresh" content="0; url=/en/">
+</head>
+<body>
+    <p>
+        Redirecting to the appropriate language version.
+        If you are not redirected automatically, please click <a id="redirect-link" href="/en/">here</a>.
+    </p>
+    <script>
+        // Update the fallback link to match the chosen language.
+        document.getElementById('redirect-link').href = redirectPath;
+    </script>
+</body>
+</html>

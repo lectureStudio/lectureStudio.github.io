@@ -1,0 +1,14 @@
+{{ $page := index (split .RelPermalink "/") 2 }}
+{{ $pageCss := resources.Get (printf "/css/%s.css" $page) }}
+
+{{ if $pageCss }}
+    {{ $css := $pageCss | postCSS (dict "config" "./postcss.config.js") -}}
+
+    {{- if hugo.IsServer }}
+        {{ $css = $css | resources.ExecuteAsTemplate (printf "css/%s.dev.%v.css" $page now.UnixMilli) .}}
+    {{ else }}
+        {{ $css = $css | minify | fingerprint | resources.PostProcess }}
+    {{ end -}}
+
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+{{ end }}

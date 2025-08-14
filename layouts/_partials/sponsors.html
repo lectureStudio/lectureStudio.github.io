@@ -1,0 +1,24 @@
+<section class="py-8 bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="text-center text-lg/8 font-semibold">
+            {{ with .Site.GetPage "/sponsors" }}{{ .Title }}{{ else }}Our Sponsors{{ end }}
+        </div>
+
+        <div class="mx-auto grid grid-cols-3 md:grid-cols-3 gap-4 items-center justify-center">
+            {{ $lang := $.Site.Language.Lang }}
+            {{ $sponsorsKey := printf "sponsors_%s" $lang }}
+            {{ range index .Site.Data.sponsors $sponsorsKey }}
+            <div class="p-4 flex flex-col items-center">
+                {{ $logoPath := strings.TrimPrefix "/" .logo }}
+                {{ $svg := resources.Get $logoPath }}
+                <div class="flex h-16">
+                    {{ with $svg }}
+                        {{ .Content | replaceRE "<svg" "<svg class=\"w-full h-auto max-h-16 preserve-aspect-ratio\"" | safeHTML }}
+                    {{ end }}
+                </div>
+                <h3 class="text-sm text-center font-medium mt-2">{{ .name }}</h3>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>

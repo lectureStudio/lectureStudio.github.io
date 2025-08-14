@@ -1,0 +1,35 @@
+- name: "Prof. Dr-Ing. Andreas Koch"
+  institution: "Technical University of Darmstadt, Department of Computer Science"
+  lectures:
+    - "Architectures and Design of Computer Systems"
+    - "Introduction to Compiler Construction"
+    - "Advanced Compiler Construction"
+
+- name: "Prof. Dr. Andy Schürr"
+  institution: "Technical University of Darmstadt, Department of Electrical Engineering and Information Technology"
+  lectures:
+    - "Software Engineering - Introduction"
+    - "Software Engineering - Maintenance and Quality Assurance"
+
+- name: "Dr.-Ing. Florian Stock"
+  institution: "Technical University of Darmstadt, Department of Computer Science"
+  lectures:
+    - "Algorithms for Chip Design Tools"
+    - "Practical FPGA Programming in High-level Languages"
+    - "General Computer Science I"
+
+- name: "Dr.-Ing. Eric Lenz"
+  institution: "Technical University of Darmstadt, Department of Electrical Engineering and Information Technology"
+  lectures:
+    - "Robust Control"
+    - "Identification of Dynamic Systems"
+
+- name: "Prof. Dr. Björn Scheuermann"
+  institution: "Technical University of Darmstadt, Department of Electrical Engineering and Information Technology"
+  lectures:
+    - "Communications networks"
+
+- name: "Prof. Dr.-Ing. Klaus Hofmann"
+  institution: "Technical University of Darmstadt, Department of Electrical Engineering and Information Technology"
+  lectures:
+    - "Computer Aided Design for SoCs"

@@ -1,0 +1,16 @@
+{{ define "main" }}
+    <div class="flex flex-col md:flex-row gap-2 lg:gap-8 mx-auto">
+        <!-- Sidebar Navigation -->
+        <div class="md:w-1/4">
+            {{ partial "docs/sidebar.html" . }}
+        </div>
+
+        <!-- Main Content -->
+        <div class="md:w-3/4 bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 lg:p-8">
+            <!-- Content -->
+            <article class="doc-section max-w-full prose dark:prose-invert prose-slate mb-8">
+                {{ .Content }}
+            </article>
+        </div>
+    </div>
+{{ end }}

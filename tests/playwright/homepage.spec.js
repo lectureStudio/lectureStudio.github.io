@@ -20,7 +20,7 @@ const makeMenuVisible = async (page, isMobile) => {
         // This happens on mobile viewports
         if (hasHiddenClass) {
             // Click the hamburger button to open the menu
-            await page.locator('button[aria-controls="menuItems"]').click();
+            await page.locator('button[aria-label="Main"]').click();
 
             // Wait for mobile menu animation
             //await page.waitForTimeout(1000);

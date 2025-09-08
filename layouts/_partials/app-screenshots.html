@@ -40,7 +40,7 @@
         </div>
         <div class="relative overflow-hidden pt-8">
             <div class="mx-auto max-w-5xl px-6 lg:px-8">
-                <img src="{{- (resources.Get "images/app/lecturePresenter.png" | fingerprint).RelPermalink -}}" alt="lecturePresenter screenshot" class="mb-16 rounded-xl shadow-2xl ring-1 ring-gray-900/10" width="2534" height="1620">
+                <img loading="lazy" src="{{- (resources.Get "images/app/lecturePresenter.png" | fingerprint).RelPermalink -}}" alt="lecturePresenter screenshot" class="mb-16 rounded-xl shadow-2xl ring-1 ring-gray-900/10" width="2534" height="1620">
             </div>
         </div>
     </div>
@@ -55,7 +55,7 @@
         </div>
         <div class="relative overflow-hidden pt-8">
             <div class="mx-auto max-w-5xl px-6 lg:px-8">
-                <img src="{{- (resources.Get (printf "images/app/lectureEditor.%s.png" .Site.Language.Lang) | fingerprint).RelPermalink -}}" alt="lectureEditor screenshot" class="mb-16 rounded-xl shadow-2xl ring-1 ring-gray-900/10" width="1538" height="965">
+                <img loading="lazy" src="{{- (resources.Get (printf "images/app/lectureEditor.%s.png" .Site.Language.Lang) | fingerprint).RelPermalink -}}" alt="lectureEditor screenshot" class="mb-16 rounded-xl shadow-2xl ring-1 ring-gray-900/10" width="1538" height="965">
             </div>
         </div>
     </div>
@@ -97,14 +97,14 @@
                         </div>
 
                         <div class="bg-gray-800 rounded-b-lg">
-                            <img src="{{- (resources.Get (printf "images/app/web-browser.%s.png" .Site.Language.Lang) | fingerprint).RelPermalink -}}" alt="lectureStreaming mobile screenshot" class="max-w-full h-auto rounded-b-lg">
+                            <img loading="lazy" src="{{- (resources.Get (printf "images/app/web-browser.%s.png" .Site.Language.Lang) | fingerprint).RelPermalink -}}" alt="lectureStreaming desktop screenshot" class="max-w-full h-auto rounded-b-lg">
                         </div>
                     </figure>
 
                     <!-- Mobile Device -->
                     <figure class="hidden absolute bottom-0 start-0 z-2 max-w-full w-60 h-auto mb-20 ms-20 lg:block">
                         <div class="p-1.5 bg-gray-100 rounded-3xl shadow-[0_2.75rem_5.5rem_-3.5rem_rgb(45_55_75_/_20%),_0_2rem_4rem_-2rem_rgb(45_55_75_/_30%),_inset_0_-0.1875rem_0.3125rem_0_rgb(45_55_75_/_20%)] dark:shadow-[0_2.75rem_5.5rem_-3.5rem_rgb(0_0_0_/_20%),_0_2rem_4rem_-2rem_rgb(0_0_0_/_30%),_inset_0_-0.1875rem_0.3125rem_0_rgb(0_0_0_/_20%)] dark:bg-neutral-700">
-                            <img src="{{- (resources.Get (printf "images/app/web-mobile.%s.png" .Site.Language.Lang) | fingerprint).RelPermalink -}}" alt="lectureStreaming mobile screenshot" class="border-black max-w-full rounded-[1.25rem] h-auto" style="border-width: medium;">
+                            <img loading="lazy" src="{{- (resources.Get (printf "images/app/web-mobile.%s.png" .Site.Language.Lang) | fingerprint).RelPermalink -}}" alt="lectureStreaming mobile screenshot" class="border-black max-w-full rounded-[1.25rem] h-auto" style="border-width: medium;">
                         </div>
                     </figure>
                 </div>

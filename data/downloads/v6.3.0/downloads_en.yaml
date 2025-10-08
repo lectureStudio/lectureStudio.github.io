@@ -1,0 +1,95 @@
+changelog: |
+  ## What's Changed
+  
+  ### Features
+  
+  - New free-text quiz type and marking of correct quiz options ([#1050](https://github.com/lectureStudio/lectureStudio/issues/1050))
+  - Save toolbar layout in the app's configuration ([#1070](https://github.com/lectureStudio/lectureStudio/issues/1070))
+  - New recording player for the vector export ([#1071](https://github.com/lectureStudio/lectureStudio/issues/1071))
+  - Crop and scale screen-sharing videos to use the maximum available space ([#1072](https://github.com/lectureStudio/lectureStudio/issues/1072))
+  
+  ### Bug Fixes
+  
+  - *(core)* Screen handling and layout management in the settings for connected displays
+  - *(core)* Update camera format handling
+  - *(presenter)* Minimising a shared window destroys the recording ([#1039](https://github.com/lectureStudio/lectureStudio/issues/1039))
+  - *(presenter)* Improve screen source availability check
+  - *(presenter)* Ensure server name binding is executed on the Swing event dispatch thread
+  - *(presenter)* Implement close method for TemplateDocument and cache whiteboards for streams
+  - *(presenter)* Ensure proper destruction of graftMapping with MuPDF
+  - *(presenter)* Streamline video frame handling in ScreenCaptureService and ScreenShareService
+  - *(presenter)* Improve quiz comparison logic and update documentation
+  - *(presenter)* Key event handling in SwingCreateQuizView
+  - *(presenter)* Screen action overlap on the last recorded one ([#1039](https://github.com/lectureStudio/lectureStudio/issues/1039))
+  - *(presenter)* Text notes collapsing on document ([#1044](https://github.com/lectureStudio/lectureStudio/issues/1044))
+  - *(presenter)* PDFPC functionalities ([#1038](https://github.com/lectureStudio/lectureStudio/issues/1038))
+  - *(presenter)* Configuring and start/suspend stopwatch ([#1038](https://github.com/lectureStudio/lectureStudio/issues/1038))
+  - *(presenter)* Disable copy overlay ([#1038](https://github.com/lectureStudio/lectureStudio/issues/1038))
+  - *(presenter)* Set default recording path if it doesn't exist
+  - *(presenter)* Enhance overlay functionality with unique identifiers ([#1057](https://github.com/lectureStudio/lectureStudio/issues/1057))
+  - *(presenter)* Note slide position handling ([#1060](https://github.com/lectureStudio/lectureStudio/issues/1060))
+  - *(presenter)* Overlay navigation logic ([#1064](https://github.com/lectureStudio/lectureStudio/issues/1064))
+  - *(presenter)* Normalize line endings in PDF text ([#1036](https://github.com/lectureStudio/lectureStudio/issues/1036))
+  - *(presenter)* Retrieval of all quizzes from PDF documents ([#1065](https://github.com/lectureStudio/lectureStudio/issues/1065))
+  - *(presenter)* Handle navigation to previous/next page when overlaying ([#1038](https://github.com/lectureStudio/lectureStudio/issues/1038))
+  - *(presenter)* Adjust indentation for state reset ([#85](https://github.com/lectureStudio/lectureStudio/issues/85))
+  - *(editor)* Add error handling for unsupported screen cutting ([#1059](https://github.com/lectureStudio/lectureStudio/issues/1059))
+  - *(editor)* Position calculation in text-box skin ([#1061](https://github.com/lectureStudio/lectureStudio/issues/1061))
+  - *(editor)* Handle copying screen recordings in import ([#1062](https://github.com/lectureStudio/lectureStudio/issues/1062))
+  - *(editor)* Show error messages on missing videos referenced in recordings ([#1063](https://github.com/lectureStudio/lectureStudio/issues/1063))
+  - *(editor)* Extend view functionality after zooming out ([#1066](https://github.com/lectureStudio/lectureStudio/issues/1066))
+  - *(editor)* Audio and event insertion for undo/redo actions ([#1067](https://github.com/lectureStudio/lectureStudio/issues/1067))
+  - *(editor)* Undo of imported and played video ([#1068](https://github.com/lectureStudio/lectureStudio/issues/1068))
+  - *(editor)* Rendering video logic when seeking ([#1069](https://github.com/lectureStudio/lectureStudio/issues/1069))
+  - *(editor)* Error handling in video playback and recording operations
+  - *(editor)* Video player stop logic to handle initialization states properly
+  - *(editor)* Frame handling across rendering pipeline
+  
+  ### Other
+  
+  - (macOS) Fix the notarization process
+  - Update webrtc-java dependency to version 0.14.0
+  - Drop the old web player and removed deprecated dependency
+  
+  ### Documentation
+  
+  - Documentation for screen capture and sharing services
+  
+  
+  ## New Contributors
+  * @maxkratz made their first contribution in [#1055](https://github.com/lectureStudio/lectureStudio/pull/1055)
+  
+  **Full Changelog**: https://github.com/lectureStudio/lectureStudio/compare/v6.2.2...v6.3.0
+  
+
+version: "6.3.0"
+date: "2025-10-07"
+
+platforms:
+  - name: "Windows"
+    description: "Installer for Windows 10/11"
+    packages:
+      - type: "EXE"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.3.0/lectureStudio-6.3.0-windows-x86_64.exe"
+        size: "206.7 MB"
+  - name: "macOS"
+    description: "Installer for macOS"
+    packages:
+      - type: "Intel x86"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.3.0/lectureStudio-6.3.0-mac-x86_64.pkg"
+        size: "215.5 MB"
+      - type: "Apple Silicon"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.3.0/lectureStudio-6.3.0-mac-arm64.pkg"
+        size: "200.6 MB"
+  - name: "Linux"
+    description: "Packages for Linux distributions"
+    packages:
+      - type: "DEB"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.3.0/lecturestudio_6.3.0-linux_amd64.deb"
+        size: "207.8 MB"
+      - type: "RPM"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.3.0/lecturestudio-6.3.0-linux.x86_64.rpm"
+        size: "227.5 MB"
+      - type: "ZIP"
+        url: "https://github.com/lectureStudio/lectureStudio/releases/download/v6.3.0/lectureStudio-6.3.0-linux-x86_64.zip"
+        size: "228.1 MB"

@@ -16,7 +16,7 @@ If you're new to our software, we recommend starting with the installation guide
 
 ### Complete User Manual
 
-Detailed instructions for all features and functionality can be found in our comprehensive [User manual](https://www.lecturestudio.org/manual/ "_blank").
+Detailed instructions for all features and functionality can be found in our comprehensive [User manual](/manual "_blank").
 
 ### Need Help?
 

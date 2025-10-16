@@ -16,7 +16,7 @@ Wenn Sie neu bei unserer Software sind, empfehlen wir Ihnen, mit der Installatio
 
 ### Vollständiges Benutzerhandbuch
 
-Ausführliche Anleitungen zu allen Funktionalitäten finden Sie in unserem umfassenden [Benutzerhandbuch](https://www.lecturestudio.org/manual/ "_blank").
+Ausführliche Anleitungen zu allen Funktionalitäten finden Sie in unserem umfassenden [Benutzerhandbuch](/manual "_blank").
 
 ### Benötigen Sie Hilfe?
 

@@ -6,6 +6,7 @@ describe('Link Checker', () => {
     test('check for broken links in public directory', () => {
         // Configuration
         const publicDir = path.join(__dirname, '..', '..', 'public');
+        const staticDir = path.join(publicDir, 'manual'); // Exclude this directory from checks
         const ignoredExtensions = ['.jpg', '.png', '.gif', '.svg', '.ico', '.pdf', '.zip', '.exe', '.dmg', '.deb', '.rpm'];
         const defaultLanguage = 'en'; // Default language from Hugo config
 
@@ -126,6 +127,9 @@ describe('Link Checker', () => {
         }
 
         function scanDirectory(dir) {
+            if (path.resolve(dir) === path.resolve(staticDir)) {
+                return;
+            }
             const files = fs.readdirSync(dir);
 
             files.forEach(file => {

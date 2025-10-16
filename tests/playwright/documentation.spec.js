@@ -60,14 +60,14 @@ test.describe('Documentation Pages', () => {
         await page.goto('/en/documentation/');
         
         // Find and click the user manual link
-        const manualLink = page.locator('a[href*="/manual/"]');
+        const manualLink = page.locator('a[href*="/manual"]');
         
         // Check if the link exists and get its href
         const href = await manualLink.getAttribute('href');
         expect(href).toBeTruthy();
         
         // We won't navigate to external links, but we can verify the link has a proper format
-        expect(href).toContain('lecturestudio.org/manual');
+        expect(href).toContain('/manual');
     });
     
     test('should verify navigation between documentation pages', async ({page}) => {

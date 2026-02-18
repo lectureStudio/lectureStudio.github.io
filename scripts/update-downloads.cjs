@@ -47,8 +47,8 @@ const config = {
                 de: 'Installer für Windows 10/11'
             },
             assetPatterns: [
-                { pattern: /.*win.*\.msi$/i, type: 'MSI' },
-                { pattern: /.*win.*\.exe$/i, type: 'EXE' }
+                { pattern: /.*\.msi$/i, type: 'MSI' },
+                { pattern: /.*\.exe$/i, type: 'EXE' }
             ]
         },
         {
@@ -59,8 +59,8 @@ const config = {
                 de: 'Installer für macOS'
             },
             assetPatterns: [
-                { pattern: /.*mac.*x86.*\.pkg$/i, type: 'Intel x86' },
-                { pattern: /.*mac.*arm64.*\.pkg$/i, type: 'Apple Silicon' }
+                { pattern: /.*x86.*\.pkg$/i, type: 'Intel x86' },
+                { pattern: /.*arm64.*\.pkg$/i, type: 'Apple Silicon' }
             ]
         },
         {
@@ -71,9 +71,10 @@ const config = {
                 de: 'Pakete für Linux-Distributionen'
             },
             assetPatterns: [
-                { pattern: /.*linux.*\.deb$/i, type: 'DEB' },
-                { pattern: /.*linux.*\.rpm$/i, type: 'RPM' },
-                { pattern: /.*linux.*\.zip$/i, type: 'ZIP' }
+                { pattern: /.*\.AppImage$/i, type: 'AppImage' },
+                { pattern: /.*\.deb$/i, type: 'DEB' },
+                { pattern: /.*\.rpm$/i, type: 'RPM' },
+                { pattern: /.*\.zip$/i, type: 'ZIP' }
             ]
         }
     ],
